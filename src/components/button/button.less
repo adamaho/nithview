@@ -17,10 +17,6 @@
     outline: none;
   }
 
-  button:focus {
-    background: red;
-  }
-
   button::before {
     content: '';
 
@@ -35,58 +31,43 @@
     z-index: -1;
 
     border-radius: var(--nv-button-border-radius);
+    box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
 
     transition: all 0.1s ease-in-out;
   }
+
+  button:focus::before,
+  button:hover::before {
+    box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
+  }
+
+  button:active::before {
+    opacity: 0;
+  }
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
 }
 
-// :host(.primary) {
-//   button {
-//     background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
-//   }
+:host(.primary) {
+  button {
+    background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
+  }
 
-//   button:active {
-//     box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
-//   }
-// }
+  button:active {
+    box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
+  }
+}
 
-// :host(.default) {
-//   button {
-//     background: var(--nv-primary-color);
-//   }
+:host(.default) {
+  button {
+    background: var(--nv-primary-color);
+  }
 
-//   button:active {
-//     box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
-//   }
-// }
-
-// :host::before {
-//   content: '';
-
-//   display: block;
-//   position: absolute;
-
-//   height: 100%;
-//   width: 100%;
-
-//   z-index: -1;
-
-//   border-radius: var(--nv-button-border-radius);
-
-//   transition: all 0.1s ease-in-out;
-// }
-
-// :host::before {
-//   box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
-// }
-
-// :host(:hover)::before,
-// :host(:focus)::before{
-//   box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
-// }
-
-// :host(:active)::before {
-//   opacity: 0;
-// }
+  button:active {
+    box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+  }
+}
 
 
