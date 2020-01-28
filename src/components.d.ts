@@ -13,6 +13,9 @@ import {
 
 export namespace Components {
   interface NvButton {
+    /**
+    * The type of the button
+    */
     'type': ButtonType;
   }
 }
@@ -32,6 +35,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface NvButton {
+    /**
+    * The type of the button
+    */
     'type'?: ButtonType;
   }
 

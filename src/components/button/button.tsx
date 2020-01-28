@@ -15,14 +15,16 @@ export type ButtonType = 'primary' | 'default';
 })
 export class Button {
 
+   /**
+   * The type of the button
+   */
   @Prop() type: ButtonType = 'default';
 
   render() {
     return (
       <Host
         class={{
-          'primary': this.type === 'primary',
-          'default': this.type === 'default'
+          [this.type]: true
         }}
       >
         <button>
