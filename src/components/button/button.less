@@ -1,0 +1,85 @@
+:host { 
+  display: inline-block;
+  position: relative;
+
+  button {
+    font-family: inherit;
+    height: var(--nv-button-height);
+    padding: var(--nv-button-padding);
+    font-size: var(--nv-button-font-size);
+  
+    border: none;
+    border-radius: var(--nv-button-border-radius);
+    cursor: pointer;
+
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+
+:host(.primary) {
+  button {
+    background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
+  }
+
+  button:active {
+    box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
+  }
+}
+
+:host(.default) {
+  button {
+    background: var(--nv-primary-color);
+  }
+
+  button:active {
+    box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+  }
+}
+
+:host::before {
+  content: '';
+
+  display: block;
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+
+  z-index: -1;
+
+  border-radius: var(--nv-button-border-radius);
+
+  transition: all 0.1s ease-in-out;
+}
+
+:host(.primary)::before {
+  opacity: 0;
+  box-shadow: 3px 2px 15px rgba(255, 126, 95, 0.5), -3px -2px 15px rgba(254, 180, 123, 0.5);
+}
+
+:host(.primary:hover)::before,
+:host(.primary:focus)::before {
+  opacity: 1;
+}
+
+:host(.primary:active)::before {
+  opacity: 0;
+}
+
+
+:host(.default)::before {
+  box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
+}
+
+:host(.default:hover)::before,
+:host(.default:focus)::before {
+  box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
+}
+
+:host(.default:active)::before {
+  opacity: 0;
+}
+
+
+
