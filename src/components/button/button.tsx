@@ -1,7 +1,6 @@
 import {
   Component,
   Prop,
-  // Listen,
   Host,
   h
 } from '@stencil/core';
@@ -17,11 +16,6 @@ export type ButtonType = 'primary' | 'default';
 export class Button {
 
   @Prop() type: ButtonType = 'default';
-
-  // @Listen('click')
-  // onClick(e) {
-  //   console.log(e.target);
-  // }
 
   render() {
     return (

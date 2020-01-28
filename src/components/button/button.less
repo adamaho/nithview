@@ -16,7 +16,6 @@
   }
 }
 
-
 :host(.primary) {
   button {
     background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
@@ -53,31 +52,16 @@
   transition: all 0.1s ease-in-out;
 }
 
-:host(.primary)::before {
-  opacity: 0;
-  box-shadow: 3px 2px 15px rgba(255, 126, 95, 0.5), -3px -2px 15px rgba(254, 180, 123, 0.5);
-}
-
-:host(.primary:hover)::before,
-:host(.primary:focus)::before {
-  opacity: 1;
-}
-
-:host(.primary:active)::before {
-  opacity: 0;
-}
-
-
-:host(.default)::before {
+:host::before {
   box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
 }
 
-:host(.default:hover)::before,
-:host(.default:focus)::before {
+:host(:hover)::before,
+:host(:focus)::before{
   box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
 }
 
-:host(.default:active)::before {
+:host(:active)::before {
   opacity: 0;
 }
 

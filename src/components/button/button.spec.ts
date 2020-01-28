@@ -1,4 +1,6 @@
-import { Button } from './button';
+import {
+  Button
+} from './button';
 
 describe('nv-button', () => {
   it('builds', () => {
