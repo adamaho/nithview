@@ -20,55 +20,73 @@
   button:focus {
     background: red;
   }
-}
 
-:host(.primary) {
-  button {
-    background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
-  }
+  button::before {
+    content: '';
 
-  button:active {
-    box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
-  }
-}
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
 
-:host(.default) {
-  button {
-    background: var(--nv-primary-color);
-  }
+    height: 100%;
+    width: 100%;
 
-  button:active {
-    box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+    z-index: -1;
+
+    border-radius: var(--nv-button-border-radius);
+
+    transition: all 0.1s ease-in-out;
   }
 }
 
-:host::before {
-  content: '';
+// :host(.primary) {
+//   button {
+//     background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
+//   }
 
-  display: block;
-  position: absolute;
+//   button:active {
+//     box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
+//   }
+// }
 
-  height: 100%;
-  width: 100%;
+// :host(.default) {
+//   button {
+//     background: var(--nv-primary-color);
+//   }
 
-  z-index: -1;
+//   button:active {
+//     box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+//   }
+// }
 
-  border-radius: var(--nv-button-border-radius);
+// :host::before {
+//   content: '';
 
-  transition: all 0.1s ease-in-out;
-}
+//   display: block;
+//   position: absolute;
 
-:host::before {
-  box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
-}
+//   height: 100%;
+//   width: 100%;
 
-:host(:hover)::before,
-:host(:focus)::before{
-  box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
-}
+//   z-index: -1;
 
-:host(:active)::before {
-  opacity: 0;
-}
+//   border-radius: var(--nv-button-border-radius);
+
+//   transition: all 0.1s ease-in-out;
+// }
+
+// :host::before {
+//   box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
+// }
+
+// :host(:hover)::before,
+// :host(:focus)::before{
+//   box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
+// }
+
+// :host(:active)::before {
+//   opacity: 0;
+// }
 
 

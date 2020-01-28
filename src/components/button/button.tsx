@@ -27,7 +27,7 @@ export class Button {
       >
         <button>
           <slot />
-        </button>
+        </button>  
       </Host>
     );
   }
