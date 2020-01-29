@@ -1,10 +1,8 @@
 import {
   Component,
   Prop,
-  Event,
   Host,
-  h,
-  EventEmitter
+  h
 } from '@stencil/core';
 
 export type ButtonType = 'primary' | 'default';
