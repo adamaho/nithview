@@ -14,14 +14,17 @@ export const config: Config = {
       esmLoaderPath: '../loader'
     },
     {
-      type: 'docs-readme'
+      type: 'docs-readme',
+      footer: '**',
     },
     {
       type: 'www'
     }
   ],
-  globalStyle: 'src/global/variables.css',
+  globalStyle: 'src/global/variables.less',
   plugins: [
-    less()
+    less({
+      injectGlobalPaths: ['src/global/variables.less']
+    })
   ]
 };

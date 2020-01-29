@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet"> 
-  <title>Nithview</title>
+  <title>NithView</title>
 
   <script type="module" src="/build/nithview.esm.js"></script>
   <script nomodule src="/build/nithview.js"></script>
@@ -13,8 +13,12 @@
 <body>
 
   <div class="center">
-    <nv-button style="margin-right: 20px" type="primary">primary</nv-button>
-    <nv-button type="default">default</nv-button>
+    <nv-button onclick="(e) => foo(e)" style="margin-right: 20px" type="primary">
+      primary
+    </nv-button>
+    <nv-button type="default">
+      default
+    </nv-button>
   </div>
 
 </body>
@@ -38,13 +42,16 @@
   }
 
   :root {
-    --nv-primary-color: #E9F2FC;
-    --nv-button-backgound: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
-    --nv-button-color: #363B58;
-    --nv-button-height: 46px;
-    --nv-button-font-size: 14px;
-    --nv-button-padding: 0px 16px;
-    --nv-button-border-radius: 10px;
+    --nv-primary-color: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
+    --nv-primary-background-color: #E9F2FC;
+    --nv-secondary-color: #E9F2FC;
+    --nv-color: #363B58;
   }
 </style>
+<script>
+
+  const foo = (e) => {
+    console.log(e);
+  }
+</script>
 </html>

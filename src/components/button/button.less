@@ -1,72 +1,98 @@
 :host { 
+  --background: var(--nv-secondary-color);
+  --border-radius: 10px;
+  --box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
+  --box-shadow-hover:-2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
+  --box-shadow-default-active: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+  --box-shadow-primary-active: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);
+  --color: var(--nv-color);
+  --font-size: 14px;
+  --height: 46px;
+  --padding: 0px 16px;
+  --transition: all 0.1s ease-in-out;
+
   display: inline-block;
   position: relative;
+}
 
-  button {
-    font-family: inherit;
-    height: var(--nv-button-height);
-    padding: var(--nv-button-padding);
-    font-size: var(--nv-button-font-size);
-  
-    border: none;
-    border-radius: var(--nv-button-border-radius);
-    cursor: pointer;
+// button primary
+// --------------------------------------
+:host(.primary) {
+  --background: var(--nv-primary-color);
+}
 
-    transition: all 0.1s ease-in-out;
+// button
+// --------------------------------------
+button {
+  font-family: inherit;
+  height: var(--height);
+  padding: var(--padding);
+  font-size: var(--font-size);
 
-    outline: none;
-  }
+  background: var(--background);
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--color);
+  cursor: pointer;
 
-  button::before {
-    content: '';
+  margin: 0;
 
-    display: block;
-    position: absolute;
-    top:0;
-    left:0;
+  transition: var(--transition);
 
-    height: 100%;
-    width: 100%;
+  outline: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    z-index: -1;
+// button box-shadow
+// --------------------------------------
+button::before {
+  content: '';
 
-    border-radius: var(--nv-button-border-radius);
-    box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
 
-    transition: all 0.1s ease-in-out;
-  }
+  height: 100%;
+  width: 100%;
 
-  button:focus::before,
+  z-index: -1;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background: transparent;
+
+  transition: var(--transition);
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+// button box-shadow on desktop
+// --------------------------------------
+
+@media(any-hover: hover) {
   button:hover::before {
-    box-shadow: -2px -3px 2px rgba(255, 255, 255, 0.6), 2px 3px 2px rgba(111, 129, 160, 0.26);
+    box-shadow: var(--box-shadow-hover);
   }
+}
 
+button:active::before {
+  z-index: 1;
+}
+
+:host(.default) {
   button:active::before {
-    opacity: 0;
-  }
-
-  button::-moz-focus-inner {
-    border: 0;
+    box-shadow: var(--box-shadow-default-active);
   }
 }
 
 :host(.primary) {
-  button {
-    background: linear-gradient(90deg, #FEB47B 0%, #FF7E5F 100%);
-  }
-
-  button:active {
-    box-shadow: inset -2px -3px 2px #FEB47B, inset 2px 3px 2px rgba(45, 54, 71, 0.25);;
-  }
-}
-
-:host(.default) {
-  button {
-    background: var(--nv-primary-color);
-  }
-
-  button:active {
-    box-shadow: inset -2px -3px 2px rgba(255, 255, 255, 0.6), inset 2px 3px 2px rgba(111, 129, 160, 0.26);
+  button:active::before {
+    box-shadow: var(--box-shadow-primary-active);
   }
 }
 

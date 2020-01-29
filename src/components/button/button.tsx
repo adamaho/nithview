@@ -1,10 +1,11 @@
 import {
   Component,
   Prop,
+  Event,
   Host,
-  h
+  h,
+  EventEmitter
 } from '@stencil/core';
-
 
 export type ButtonType = 'primary' | 'default';
 
@@ -15,9 +16,7 @@ export type ButtonType = 'primary' | 'default';
 })
 export class Button {
 
-   /**
-   * The type of the button
-   */
+  /** The type of the button */
   @Prop() type: ButtonType = 'default';
 
   render() {
@@ -28,7 +27,7 @@ export class Button {
         }}
       >
         <button>
-          <slot />
+          <slot></slot>
         </button>  
       </Host>
     );
