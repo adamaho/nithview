@@ -1,4 +1,41 @@
-:host { 
+:host {
+  /**
+   * @prop --nith-button-border-radius: Border Radius of the button
+   * @prop --nith-button-font-size: Font size of text in the button
+   * @prop --nith-button-height: Height of the button
+   * @prop --nith-button-padding: Padding of the button
+   * @prop --nith-button-transition: Transition to apply to the button
+   *
+   * @prop --nith-button-default-background: Background of the default button
+   * @prop --nith-button-default-color: Color of the default button
+   * @prop --nith-button-default-active-box-shadow: Box shadow of the default button in active state
+   * @prop --nith-button-default-focus-box-shadow: Box shadow of the default button in focus state
+   * @prop --nith-button-default-hover-box-shadow: Box shadow of default button in hover state
+   *
+   * @prop --nith-button-primary-background: Background of the primary button
+   * @prop --nith-button-primary-color: Color of the primary button
+   * @prop --nith-button-primary-active-box-shadow: Box shadow of the primary button in active state
+   * @prop --nith-button-primary-focus-box-shadow: Box shadow of the primary button in focus state
+   * @prop --nith-button-primary-hover-box-shadow: Box shadow of primary button in hover state
+   */
+
+   --nith-button-border-radius: 10px;
+   --nith-button-font-size: 14px;
+   --nith-button-height: 46px;
+   --nith-button-padding: 0px 16px;
+   --nith-button-transition: Transition to apply to the button
+   *
+   --nith-button-default-background: Background of the default button
+   --nith-button-default-color: Color of the default button
+   --nith-button-default-active-box-shadow: Box shadow of the default button in active state
+   --nith-button-default-focus-box-shadow: Box shadow of the default button in focus state
+   --nith-button-default-hover-box-shadow: Box shadow of default button in hover state
+   *
+   --nith-button-primary-background: Background of the primary button
+   --nith-button-primary-color: Color of the primary button
+   --nith-button-primary-active-box-shadow: Box shadow of the primary button in active state
+   --nith-button-primary-focus-box-shadow: Box shadow of the primary button in focus state
+   --nith-button-primary-hover-box-shadow: Box shadow of primary button in hover state
   --background: var(--nv-secondary-color);
   --border-radius: 10px;
   --box-shadow: -8px -6px 20px rgba(255, 255, 255, 0.9), 8px 6px 15px rgba(111, 129, 160, 0.26);
@@ -15,15 +52,17 @@
   position: relative;
 }
 
-// button primary
-// --------------------------------------
+/* button primary
+-------------------------------------- */
 :host(.primary) {
   --background: var(--nv-primary-color);
-}
+};
 
-// button
-// --------------------------------------
+/* button
+-------------------------------------- */
 button {
+  position: relative;
+
   font-family: inherit;
   height: var(--height);
   padding: var(--padding);
@@ -45,8 +84,8 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-// button box-shadow
-// --------------------------------------
+/* button box-shadow
+-------------------------------------- */
 button::before {
   content: '';
 
@@ -71,9 +110,6 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-// button box-shadow on desktop
-// --------------------------------------
-
 @media(any-hover: hover) {
   button:hover::before {
     box-shadow: var(--box-shadow-hover);
@@ -84,16 +120,12 @@ button:active::before {
   z-index: 1;
 }
 
-:host(.default) {
-  button:active::before {
-    box-shadow: var(--box-shadow-default-active);
-  }
+:host(.default) button:active::before  {
+  box-shadow: var(--box-shadow-default-active);
 }
 
-:host(.primary) {
-  button:active::before {
-    box-shadow: var(--box-shadow-primary-active);
-  }
+:host(.primary) button:active::before {
+  box-shadow: var(--box-shadow-primary-active);
 }
 
 

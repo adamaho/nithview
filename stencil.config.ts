@@ -8,6 +8,9 @@ import {
 
 export const config: Config = {
   namespace: 'nithview',
+  bundles: [
+    { components: ['nith-button'] },
+  ],
   outputTargets: [
     {
       type: 'dist',
@@ -21,10 +24,7 @@ export const config: Config = {
       type: 'www'
     }
   ],
-  globalStyle: 'src/global/variables.less',
-  plugins: [
-    less({
-      injectGlobalPaths: ['src/global/variables.less']
-    })
+  plugins:[
+    less()
   ]
 };

@@ -12,7 +12,7 @@ import {
 } from './components/button/button';
 
 export namespace Components {
-  interface NvButton {
+  interface NithButton {
     /**
     * The type of the button
     */
@@ -23,18 +23,18 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLNvButtonElement extends Components.NvButton, HTMLStencilElement {}
-  var HTMLNvButtonElement: {
-    prototype: HTMLNvButtonElement;
-    new (): HTMLNvButtonElement;
+  interface HTMLNithButtonElement extends Components.NithButton, HTMLStencilElement {}
+  var HTMLNithButtonElement: {
+    prototype: HTMLNithButtonElement;
+    new (): HTMLNithButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'nv-button': HTMLNvButtonElement;
+    'nith-button': HTMLNithButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface NvButton {
+  interface NithButton {
     /**
     * The type of the button
     */
@@ -42,7 +42,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'nv-button': NvButton;
+    'nith-button': NithButton;
   }
 }
 
@@ -52,7 +52,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
+      'nith-button': LocalJSX.NithButton & JSXBase.HTMLAttributes<HTMLNithButtonElement>;
     }
   }
 }
