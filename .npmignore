@@ -1,1 +1,6 @@
-src/index.html
+src
+.stencil
+.gitignore
+package-lock.json
+stencil.config.ts
+tsconfig.json
