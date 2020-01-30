@@ -6,7 +6,7 @@ import {
   Button
 } from './button';
 
-describe('nv-button', () => {
+describe('nith-button', () => {
   it('builds', () => {
     expect(new Button()).toBeTruthy();
   });
@@ -14,11 +14,11 @@ describe('nv-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [Button],
-      html: `<nv-button></nv-button>`
+      html: `<nith-button></nith-button>`
     });
 
     expect(page.root).toEqualHtml(`
-      <nv-button class="default">
+      <nith-button class="default">
        <mock:shadow-root>
          <button>
            <slot></slot>
@@ -30,11 +30,11 @@ describe('nv-button', () => {
   it('sets the "type" prop', async () => {
     const page = await newSpecPage({
       components: [Button],
-      html: `<nv-button type="primary"></nv-button>`
+      html: `<nith-button type="primary"></nith-button>`
     });
 
     expect(page.root).toEqualHtml(`
-      <nv-button class="primary" type="primary">
+      <nith-button class="primary" type="primary">
        <mock:shadow-root>
          <button>
            <slot></slot>

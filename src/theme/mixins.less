@@ -1,0 +1,18 @@
+// box shadow mixins
+// --------------------
+
+.shadow(@light-edge-color, @dark-edge-color) {
+  @result: -8px -6px 20px @light-edge-color, 8px 6px 15px rgba(@dark-edge-color, 0.25)
+}
+
+.active-shadow(@light-edge-color, @dark-edge-color) {
+  @result: inset -2px -3px 2px rgba(@light-edge-color, 0.6), inset 2px 3px 2px rgba(@dark-edge-color, 0.26)
+}
+
+.hover-shadow(@light-edge-color, @dark-edge-color) {
+  @result: -2px -3px 2px rgba(@light-edge-color, 0.6), 2px 3px 2px rgba(@dark-edge-color, 0.25);
+}
+
+.focus-shadow(@light-edge-color, @dark-edge-color) {
+  @result: -2px -3px 2px rgba(@light-edge-color, 0.6), 2px 3px 2px rgba(@dark-edge-color, 0.25);
+}
