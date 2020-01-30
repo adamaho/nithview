@@ -13,11 +13,21 @@
 <body>
 
   <div class="center">
-    <nv-button onclick="(e) => foo(e)" style="margin-right: 20px" type="primary">
+    <nv-button style="margin-right: 20px" type="primary">
       primary
     </nv-button>
-    <nv-button type="default">
+    <nv-button style="margin-right: 20px" type="primary" disabled>
+      disabled
+    </nv-button>
+    <nv-button style="margin-right: 20px" type="default">
       default
+    </nv-button>
+    <nv-button style="margin-right: 20px" type="default" disabled>
+      disabled
+    </nv-button>
+    <nv-button style="margin-right: 20px" type="default" disabled loading>
+      loading
+      <span slot="loading-icon"></span>
     </nv-button>
   </div>
 
@@ -46,10 +56,4 @@
     --nv-color: #363B58;
   }
 </style>
-<script>
-
-  const foo = (e) => {
-    console.log(e);
-  }
-</script>
 </html>

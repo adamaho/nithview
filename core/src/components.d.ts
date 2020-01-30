@@ -14,6 +14,14 @@ import {
 export namespace Components {
   interface NvButton {
     /**
+    * If true, the button will be disabled
+    */
+    'disabled': boolean;
+    /**
+    * If true, the button will be in a loading state
+    */
+    'loading': boolean;
+    /**
     * The type of the button
     */
     'type': ButtonType;
@@ -35,6 +43,14 @@ declare global {
 
 declare namespace LocalJSX {
   interface NvButton {
+    /**
+    * If true, the button will be disabled
+    */
+    'disabled'?: boolean;
+    /**
+    * If true, the button will be in a loading state
+    */
+    'loading'?: boolean;
     /**
     * The type of the button
     */

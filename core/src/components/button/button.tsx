@@ -17,14 +17,21 @@ export class Button {
   /** The type of the button */
   @Prop() type: ButtonType = 'default';
 
+  /** If true, the button will be disabled */
+  @Prop() disabled: boolean = false;
+
+  /** If true, the button will be in a loading state */
+  @Prop() loading: boolean = false;
+
   render() {
     return (
       <Host
         class={{
-          [this.type]: true
+          [`nv-button-${this.type}`]: true,
+          'nv-button-loading': this.loading
         }}
       >
-        <button>
+        <button disabled={this.disabled || this.loading}>
           <slot></slot>
         </button>  
       </Host>

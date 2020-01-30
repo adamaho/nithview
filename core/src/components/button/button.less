@@ -42,12 +42,14 @@
 
 /* button primary
 -------------------------------------- */
-:host(.primary) {
+:host(.nv-button-primary) {
   --background: var(--primary-background);
   --color: var(--primary-color);
 };
 
-:host(.default) {
+/* button default
+-------------------------------------- */
+:host(.nv-button-default) {
   --background: var(--default-background);
   --color: var(--default-color);
 }
@@ -75,8 +77,18 @@ button {
   outline: none;
   touch-action: manipulation;
   user-select: none;
+  z-index: 2;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* button disabled
+-------------------------------------- */
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
 
 /* button box-shadow
 -------------------------------------- */
