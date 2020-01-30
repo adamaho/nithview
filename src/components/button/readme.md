@@ -14,8 +14,8 @@
 
 ## CSS Custom Properties
 
-| Name                                      | Description                                      |
-| ----------------------------------------- | ------------------------------------------------ |
+| Name                                    | Description                                      |
+| --------------------------------------- | ------------------------------------------------ |
 | `--nv-button-border-radius`             | Border Radius of the button                      |
 | `--nv-button-default-active-box-shadow` | Box shadow of the default button in active state |
 | `--nv-button-default-background`        | Background of the default button                 |
