@@ -26,6 +26,7 @@ export namespace Components {
     */
     'type': ButtonType;
   }
+  interface NvLayout {}
 }
 
 declare global {
@@ -36,8 +37,15 @@ declare global {
     prototype: HTMLNvButtonElement;
     new (): HTMLNvButtonElement;
   };
+
+  interface HTMLNvLayoutElement extends Components.NvLayout, HTMLStencilElement {}
+  var HTMLNvLayoutElement: {
+    prototype: HTMLNvLayoutElement;
+    new (): HTMLNvLayoutElement;
+  };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
+    'nv-layout': HTMLNvLayoutElement;
   }
 }
 
@@ -56,9 +64,11 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
+  interface NvLayout {}
 
   interface IntrinsicElements {
     'nv-button': NvButton;
+    'nv-layout': NvLayout;
   }
 }
 
@@ -69,6 +79,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
+      'nv-layout': LocalJSX.NvLayout & JSXBase.HTMLAttributes<HTMLNvLayoutElement>;
     }
   }
 }

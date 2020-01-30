@@ -7,9 +7,18 @@
 
 ## Properties
 
-| Property | Attribute | Description            | Type                     | Default     |
-| -------- | --------- | ---------------------- | ------------------------ | ----------- |
-| `type`   | `type`    | The type of the button | `"default" \| "primary"` | `'default'` |
+| Property   | Attribute  | Description                                    | Type                     | Default     |
+| ---------- | ---------- | ---------------------------------------------- | ------------------------ | ----------- |
+| `disabled` | `disabled` | If true, the button will be disabled           | `boolean`                | `false`     |
+| `loading`  | `loading`  | If true, the button will be in a loading state | `boolean`                | `false`     |
+| `type`     | `type`     | The type of the button                         | `"default" \| "primary"` | `'default'` |
+
+
+## Slots
+
+| Slot | Description                                               |
+| ---- | --------------------------------------------------------- |
+|      | Content that is placed in the button. Must be a `string`. |
 
 
 ## CSS Custom Properties

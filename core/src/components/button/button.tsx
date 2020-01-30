@@ -7,6 +7,9 @@ import {
 
 export type ButtonType = 'primary' | 'default';
 
+/**
+ * @slot - Content that is placed in the button. Must be a `string`.
+ */
 @Component({
   tag: 'nv-button',
   styleUrl: './button.less',
