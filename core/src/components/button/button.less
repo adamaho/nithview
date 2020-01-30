@@ -45,6 +45,10 @@
 :host(.nv-button-primary) {
   --background: var(--primary-background);
   --color: var(--primary-color);
+
+  button:active::before {
+    box-shadow: var(--primary-active-box-shadow);
+  }
 };
 
 /* button default
@@ -52,6 +56,10 @@
 :host(.nv-button-default) {
   --background: var(--default-background);
   --color: var(--default-color);
+
+  button:active::before  {
+    box-shadow: var(--default-active-box-shadow);
+  }
 }
 
 /* button
@@ -88,7 +96,6 @@ button:disabled {
   cursor: default;
   pointer-events: none;
 }
-
 
 /* button box-shadow
 -------------------------------------- */
@@ -127,15 +134,7 @@ button::-moz-focus-inner {
 }
 
 button:active::before {
-  z-index: 1;
-}
-
-:host(.default) button:active::before  {
-  box-shadow: var(--default-active-box-shadow);
-}
-
-:host(.primary) button:active::before {
-  box-shadow: var(--primary-active-box-shadow);
+  z-index: 2
 }
 
 

@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'nv-layout',
-  styleUrl: 'layout.less',
+  tag: 'nv-panel',
+  styleUrl: './panel.less',
   shadow: true
 })
-export class Layout {
+export class Panel {
   render() {
     return (
       <Host>
@@ -13,5 +13,4 @@ export class Layout {
       </Host>
     );
   }
-
 }

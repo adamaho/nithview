@@ -26,7 +26,8 @@ export namespace Components {
     */
     'type': ButtonType;
   }
-  interface NvLayout {}
+  interface NvCard {}
+  interface NvPanel {}
 }
 
 declare global {
@@ -38,14 +39,21 @@ declare global {
     new (): HTMLNvButtonElement;
   };
 
-  interface HTMLNvLayoutElement extends Components.NvLayout, HTMLStencilElement {}
-  var HTMLNvLayoutElement: {
-    prototype: HTMLNvLayoutElement;
-    new (): HTMLNvLayoutElement;
+  interface HTMLNvCardElement extends Components.NvCard, HTMLStencilElement {}
+  var HTMLNvCardElement: {
+    prototype: HTMLNvCardElement;
+    new (): HTMLNvCardElement;
+  };
+
+  interface HTMLNvPanelElement extends Components.NvPanel, HTMLStencilElement {}
+  var HTMLNvPanelElement: {
+    prototype: HTMLNvPanelElement;
+    new (): HTMLNvPanelElement;
   };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
-    'nv-layout': HTMLNvLayoutElement;
+    'nv-card': HTMLNvCardElement;
+    'nv-panel': HTMLNvPanelElement;
   }
 }
 
@@ -64,11 +72,13 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
-  interface NvLayout {}
+  interface NvCard {}
+  interface NvPanel {}
 
   interface IntrinsicElements {
     'nv-button': NvButton;
-    'nv-layout': NvLayout;
+    'nv-card': NvCard;
+    'nv-panel': NvPanel;
   }
 }
 
@@ -79,7 +89,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
-      'nv-layout': LocalJSX.NvLayout & JSXBase.HTMLAttributes<HTMLNvLayoutElement>;
+      'nv-card': LocalJSX.NvCard & JSXBase.HTMLAttributes<HTMLNvCardElement>;
+      'nv-panel': LocalJSX.NvPanel & JSXBase.HTMLAttributes<HTMLNvPanelElement>;
     }
   }
 }
