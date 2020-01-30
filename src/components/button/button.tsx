@@ -8,7 +8,7 @@ import {
 export type ButtonType = 'primary' | 'default';
 
 @Component({
-  tag: 'nith-button',
+  tag: 'nv-button',
   styleUrl: './button.less',
   shadow: true
 })

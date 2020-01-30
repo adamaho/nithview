@@ -1,4 +1,4 @@
-# nith-button
+# nv-button
 
 
 
@@ -16,19 +16,19 @@
 
 | Name                                      | Description                                      |
 | ----------------------------------------- | ------------------------------------------------ |
-| `--nith-button-border-radius`             | Border Radius of the button                      |
-| `--nith-button-default-active-box-shadow` | Box shadow of the default button in active state |
-| `--nith-button-default-background`        | Background of the default button                 |
-| `--nith-button-default-color`             | Color of the default button                      |
-| `--nith-button-focus-box-shadow`          | Box shadow of the button in focus state          |
-| `--nith-button-font-size`                 | Font size of text in the button                  |
-| `--nith-button-height`                    | Height of the button                             |
-| `--nith-button-hover-box-shadow`          | Box shadow of button in hover state              |
-| `--nith-button-padding`                   | Padding of the button                            |
-| `--nith-button-primary-active-box-shadow` | Box shadow of the primary button in active state |
-| `--nith-button-primary-background`        | Background of the primary button                 |
-| `--nith-button-primary-color`             | Color of the primary button                      |
-| `--nith-button-transition`                | Transition to apply to the button                |
+| `--nv-button-border-radius`             | Border Radius of the button                      |
+| `--nv-button-default-active-box-shadow` | Box shadow of the default button in active state |
+| `--nv-button-default-background`        | Background of the default button                 |
+| `--nv-button-default-color`             | Color of the default button                      |
+| `--nv-button-focus-box-shadow`          | Box shadow of the button in focus state          |
+| `--nv-button-font-size`                 | Font size of text in the button                  |
+| `--nv-button-height`                    | Height of the button                             |
+| `--nv-button-hover-box-shadow`          | Box shadow of button in hover state              |
+| `--nv-button-padding`                   | Padding of the button                            |
+| `--nv-button-primary-active-box-shadow` | Box shadow of the primary button in active state |
+| `--nv-button-primary-background`        | Background of the primary button                 |
+| `--nv-button-primary-color`             | Color of the primary button                      |
+| `--nv-button-transition`                | Transition to apply to the button                |
 
 
 ----------------------------------------------

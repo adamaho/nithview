@@ -9,7 +9,7 @@ import {
 export const config: Config = {
   namespace: 'nithview',
   bundles: [
-    { components: ['nith-button'] },
+    { components: ['nv-button'] },
   ],
   outputTargets: [
     {

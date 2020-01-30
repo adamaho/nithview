@@ -2,39 +2,39 @@
 
 :host {
   /**
-   * @prop --nith-button-border-radius: Border Radius of the button
-   * @prop --nith-button-font-size: Font size of text in the button
-   * @prop --nith-button-height: Height of the button
-   * @prop --nith-button-padding: Padding of the button
-   * @prop --nith-button-transition: Transition to apply to the button
-   * @prop --nith-button-focus-box-shadow: Box shadow of the button in focus state
-   * @prop --nith-button-hover-box-shadow: Box shadow of button in hover state
+   * @prop --nv-button-border-radius: Border Radius of the button
+   * @prop --nv-button-font-size: Font size of text in the button
+   * @prop --nv-button-height: Height of the button
+   * @prop --nv-button-padding: Padding of the button
+   * @prop --nv-button-transition: Transition to apply to the button
+   * @prop --nv-button-focus-box-shadow: Box shadow of the button in focus state
+   * @prop --nv-button-hover-box-shadow: Box shadow of button in hover state
    *
-   * @prop --nith-button-default-background: Background of the default button
-   * @prop --nith-button-default-color: Color of the default button
-   * @prop --nith-button-default-active-box-shadow: Box shadow of the default button in active state
+   * @prop --nv-button-default-background: Background of the default button
+   * @prop --nv-button-default-color: Color of the default button
+   * @prop --nv-button-default-active-box-shadow: Box shadow of the default button in active state
    *
-   * @prop --nith-button-primary-background: Background of the primary button
-   * @prop --nith-button-primary-color: Color of the primary button
-   * @prop --nith-button-primary-active-box-shadow: Box shadow of the primary button in active state
+   * @prop --nv-button-primary-background: Background of the primary button
+   * @prop --nv-button-primary-color: Color of the primary button
+   * @prop --nv-button-primary-active-box-shadow: Box shadow of the primary button in active state
    */
 
-  --border-radius: var(--nith-button-border-radius, 10px);
-  --box-shadow: var(--nith-button-box-shadow, .shadow(@light-edge-color, @dark-edge-color)[@result]);
-  --font-size: var(--nith-button-font-size, 14px);
-  --height: var(--nith-button-height, 46px);
-  --padding: var(--nith-button-padding, 0px 16px);
-  --transition: var(--nith-button-transition, box-shadow 0.15s ease-in-out);
-  --focus-box-shadow: var(--nith-button-focus-box-shadow, .focus-shadow(@light-edge-color, @dark-edge-color)[@result]);
-  --hover-box-shadow: var(--nith-button-hover-box-shadow, .hover-shadow(@light-edge-color, @dark-edge-color)[@result]); 
+  --border-radius: var(--nv-button-border-radius, 10px);
+  --box-shadow: var(--nv-button-box-shadow, .shadow(@light-edge-color, @dark-edge-color)[@result]);
+  --font-size: var(--nv-button-font-size, 14px);
+  --height: var(--nv-button-height, 46px);
+  --padding: var(--nv-button-padding, 0px 16px);
+  --transition: var(--nv-button-transition, box-shadow 0.15s ease-in-out);
+  --focus-box-shadow: var(--nv-button-focus-box-shadow, .focus-shadow(@light-edge-color, @dark-edge-color)[@result]);
+  --hover-box-shadow: var(--nv-button-hover-box-shadow, .hover-shadow(@light-edge-color, @dark-edge-color)[@result]); 
 
-  --default-background: var(--nith-button-default-background, var(--nith-colors-default, @default-color)); 
-  --default-color: var(--nith-button-default-color, var(--nith-colors-text, @primary-text-color));
-  --default-active-box-shadow: var(--nith-button-default-active-box-shadow, .active-shadow(@light-edge-color, @dark-edge-color)[@result]);
+  --default-background: var(--nv-button-default-background, var(--nith-colors-default, @default-color)); 
+  --default-color: var(--nv-button-default-color, var(--nith-colors-text, @primary-text-color));
+  --default-active-box-shadow: var(--nv-button-default-active-box-shadow, .active-shadow(@light-edge-color, @dark-edge-color)[@result]);
 
-  --primary-background: var(--nith-button-primary-background, var(--nith-colors-primary, linear-gradient(90deg, @primary-color 0%, @secondary-color 100%))); 
-  --primary-color: var(--nith-button-primary-color, var(--nith-colors-text, @primary-text-color));
-  --primary-active-box-shadow: var(--nith-button-primary-active-box-shadow, .active-shadow(@primary-color, @dark-edge-color)[@result]);
+  --primary-background: var(--nv-button-primary-background, var(--nith-colors-primary, linear-gradient(90deg, @primary-color 0%, @secondary-color 100%))); 
+  --primary-color: var(--nv-button-primary-color, var(--nith-colors-text, @primary-text-color));
+  --primary-active-box-shadow: var(--nv-button-primary-active-box-shadow, .active-shadow(@primary-color, @dark-edge-color)[@result]);
 
   display: inline-block;
   position: relative;
