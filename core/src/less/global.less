@@ -1,0 +1,79 @@
+/* colors
+------------------------ */
+@primary-color: #FEB47B;
+@secondary-color: #FF7E5F;
+@default-color: #E9F2FC;
+
+/* text colors
+------------------------ */
+@primary-text-color: #363B58;
+@secondary-text-color: #5A6478;
+
+/* box shadow edge colors
+------------------------ */
+@light-edge-color: #FFFFFF;
+@dark-edge-color: #2D3647;
+
+/* box shadow mixins
+------------------------ */
+.shadow(@light-edge-color, @dark-edge-color) {
+  @result: -8px -6px 20px @light-edge-color, 8px 6px 15px rgba(@dark-edge-color, 0.25)
+}
+  
+.active-shadow(@light-edge-color, @dark-edge-color) {
+  @result: inset -2px -3px 2px rgba(@light-edge-color, 0.6), inset 2px 3px 2px rgba(@dark-edge-color, 0.26)
+}
+
+.hover-shadow(@light-edge-color, @dark-edge-color) {
+  @result: -2px -3px 2px rgba(@light-edge-color, 0.6), 2px 3px 2px rgba(@dark-edge-color, 0.25);
+}
+
+.focus-shadow(@light-edge-color, @dark-edge-color) {
+  @result: -2px -3px 2px rgba(@light-edge-color, 0.6), 2px 3px 2px rgba(@dark-edge-color, 0.25);
+}
+
+/* connected to active, focus, and hover pointer events
+------------------------ */
+.shadow-element(@events) when (@events = none) {};
+
+.shadow-element(@events) when (@events = all) {
+  @media(any-hover: hover) {
+    &:hover::before {
+      box-shadow: .hover-shadow(@light-edge-color, @dark-edge-color)[@result];
+    }
+
+    &:focus::before {
+      box-shadow: .focus-shadow(@light-edge-color, @dark-edge-color)[@result];
+    }
+  }
+
+  &:active::before {
+    box-shadow: .active-shadow(@light-edge-color, @dark-edge-color)[@result];
+    z-index: 2
+  }
+};
+
+.shadow-element(@events) {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+  
+    height: 100%;
+    width: 100%;
+  
+    z-index: -1;
+  
+    border-radius: 10px;
+    box-shadow: -8px -6px 20px @light-edge-color, 8px 6px 15px rgba(@dark-edge-color, 0.25);
+    background: transparent;
+  
+    transition: box-shadow 0.1s ease-in-out;
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../less/default.theme.less';
+@import '../../less/global.less';
 
 :host {
   /**
@@ -37,7 +37,6 @@
   --primary-active-box-shadow: var(--nv-button-primary-active-box-shadow, .active-shadow(@primary-color, @dark-edge-color)[@result]);
 
   display: inline-block;
-  position: relative;
 }
 
 /* button primary
@@ -45,10 +44,6 @@
 :host(.nv-button-primary) {
   --background: var(--primary-background);
   --color: var(--primary-color);
-
-  button:active::before {
-    box-shadow: var(--primary-active-box-shadow);
-  }
 };
 
 /* button default
@@ -56,17 +51,11 @@
 :host(.nv-button-default) {
   --background: var(--default-background);
   --color: var(--default-color);
-
-  button:active::before  {
-    box-shadow: var(--default-active-box-shadow);
-  }
 }
 
 /* button
 -------------------------------------- */
 button {
-  position: relative;
-
   font-family: inherit;
   height: var(--height);
   padding: var(--padding);
@@ -85,8 +74,9 @@ button {
   outline: none;
   touch-action: manipulation;
   user-select: none;
-  z-index: 2;
   -webkit-tap-highlight-color: transparent;
+  
+  .shadow-element(all);
 }
 
 /* button disabled
@@ -99,42 +89,8 @@ button:disabled {
 
 /* button box-shadow
 -------------------------------------- */
-button::before {
-  content: '';
-
-  display: block;
-  position: absolute;
-  top:0;
-  left:0;
-
-  height: 100%;
-  width: 100%;
-
-  z-index: -1;
-
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  background: transparent;
-
-  transition: var(--transition);
-}
-
 button::-moz-focus-inner {
   border: 0;
-}
-
-@media(any-hover: hover) {
-  button:hover::before {
-    box-shadow: var(--hover-box-shadow);
-  }
-
-  button:focus::before {
-    box-shadow: var(--focus-box-shadow);
-  }
-}
-
-button:active::before {
-  z-index: 2
 }
 
 

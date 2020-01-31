@@ -1,7 +1,7 @@
-import { Card } from './card';
+import { Panel } from './panel';
 
 describe('nv-card', () => {
-  it('builds', () => {
-    expect(new Card()).toBeTruthy();
+it('builds', () => {
+    expect(new Panel()).toBeTruthy();
   });
 });

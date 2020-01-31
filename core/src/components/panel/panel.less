@@ -1,10 +1,26 @@
-@import '../../less/default.theme.less';
+@import '../../less/global.less';
 
 :host {
   display: block;
+}
+
+div {
   border-radius: 10px;
   
-  box-shadow: .shadow(@light-edge-color, @dark-edge-color)[@result];
   background: var(--nv-card-background, @default-color);
   padding: 16px;
+
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .shadow-element(none);
 }
+
+:host(.clickable) {
+  div {
+    .shadow-element(all);
+  }
+}
+

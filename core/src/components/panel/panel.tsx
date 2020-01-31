@@ -8,8 +8,14 @@ import { Component, Host, h } from '@stencil/core';
 export class Panel {
   render() {
     return (
-      <Host>
-        <slot></slot>
+      <Host
+        class={{
+          clickable: true
+        }}
+      >
+        <div class="nv-panel-content">
+          <slot></slot>
+        </div>
       </Host>
     );
   }

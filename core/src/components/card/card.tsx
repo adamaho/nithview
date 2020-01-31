@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'nv-card',
@@ -8,11 +8,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class Card {
   render() {
     return (
-      <Host
-        class={{
-          clickable: true
-        }}
-      >
+      <Host>
         <nv-panel>
           <slot></slot>
         </nv-panel>
