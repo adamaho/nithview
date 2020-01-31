@@ -26,7 +26,16 @@ export namespace Components {
     */
     'type': ButtonType;
   }
-  interface NvCard {}
+  interface NvCard {
+    /**
+    * The description of the card
+    */
+    'description': string;
+    /**
+    * The title of the card
+    */
+    'title': string;
+  }
   interface NvPanel {}
 }
 
@@ -72,7 +81,16 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
-  interface NvCard {}
+  interface NvCard {
+    /**
+    * The description of the card
+    */
+    'description': string;
+    /**
+    * The title of the card
+    */
+    'title': string;
+  }
   interface NvPanel {}
 
   interface IntrinsicElements {
