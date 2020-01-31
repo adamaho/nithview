@@ -28,15 +28,16 @@ export namespace Components {
   }
   interface NvCard {
     /**
-    * The description of the card
+    * If true, card will be clickable
     */
-    'description': string;
-    /**
-    * The title of the card
-    */
-    'title': string;
+    'clickable': boolean;
   }
-  interface NvPanel {}
+  interface NvPanel {
+    /**
+    * If true, active, hover, focus styles will be applied
+    */
+    'clickable': boolean;
+  }
 }
 
 declare global {
@@ -83,15 +84,16 @@ declare namespace LocalJSX {
   }
   interface NvCard {
     /**
-    * The description of the card
+    * If true, card will be clickable
     */
-    'description': string;
-    /**
-    * The title of the card
-    */
-    'title': string;
+    'clickable'?: boolean;
   }
-  interface NvPanel {}
+  interface NvPanel {
+    /**
+    * If true, active, hover, focus styles will be applied
+    */
+    'clickable'?: boolean;
+  }
 
   interface IntrinsicElements {
     'nv-button': NvButton;

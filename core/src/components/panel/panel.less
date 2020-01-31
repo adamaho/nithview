@@ -1,26 +1,40 @@
 @import '../../less/global.less';
 
 :host {
+
+  /**
+   * @prop --nv-panel-background: Background of the panel
+   * @prop --nv-panel-border-radius: Border radius of the panel
+   * @prop --nv-panel-padding: Padding in the panel
+   */
+
+  --background: var(--nv-panel-background, @default-color);
+  --border-radius: var(--nv-panel-border-radius, @border-radius);
+  --padding: var(--nv-panel-padding, @padding-medium);
+
   display: block;
-}
-
-div {
-  border-radius: 10px;
-  
-  background: var(--nv-card-background, @default-color);
-  padding: 16px;
-
-  cursor: pointer;
-
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--border-radius);
+  background: var(--background);
+  padding: var(--padding);
 
   .shadow-element(none);
 }
 
 :host(.clickable) {
-  div {
-    .shadow-element(all);
+  cursor: pointer;
+  .shadow-element(all);
+}
+
+@media(any-hover: hover) {
+  :host(.clickable:hover)::before {
+    .shadow-host-hover();
   }
+  :host(.clickable:focus)::before {
+    .shadow-host-focus();
+  }
+}
+
+:host(.clickable:active)::before {
+  .shadow-host-active();
 }
 

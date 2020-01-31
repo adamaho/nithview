@@ -19,10 +19,9 @@
     default
   </nv-button>
   <div style="height: 32px"></div>
-  <nv-panel><div style="height: 100px"></div></nv-panel>
+  <nv-panel></nv-panel>
   <div style="height: 32px"></div>
-  <nv-card title="Title" description="Description">
-    Foo
+  <nv-card>
   </nv-card>
 
 </body>
@@ -50,4 +49,9 @@
     --nv-color: #363B58;
   }
 </style>
+<script>
+  function onClick() {
+    console.log('clicked');
+  }
+</script>
 </html>

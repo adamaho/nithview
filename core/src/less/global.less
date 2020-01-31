@@ -14,6 +14,17 @@
 @light-edge-color: #FFFFFF;
 @dark-edge-color: #2D3647;
 
+/* border
+------------------------ */
+@border-radius: 10px;
+
+/* padding
+------------------------ */
+@padding-small: 8px;
+@padding-medium: 16px;
+@padding-large: 24px;
+@padding-huge: 32px;
+
 /* box shadow mixins
 ------------------------ */
 .shadow(@light-edge-color, @dark-edge-color) {
@@ -32,7 +43,8 @@
   @result: -2px -3px 2px rgba(@light-edge-color, 0.6), 2px 3px 2px rgba(@dark-edge-color, 0.25);
 }
 
-/* connected to active, focus, and hover pointer events
+/* element used to create skeumorphic box-shadows around elements
+ * parent must be a div and not a host
 ------------------------ */
 .shadow-element(@events) when (@events = none) {};
 
@@ -57,6 +69,13 @@
   position: relative;
   z-index: 2;
 
+  transition: var(--nv-box-shadow-transition, box-shadow 0.15s ease-in-out);
+
+  outline: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
   &::before {
     content: '';
 
@@ -76,4 +95,16 @@
   
     transition: box-shadow 0.1s ease-in-out;
   }
+}
+
+.shadow-host-active() {
+  box-shadow: .active-shadow(@light-edge-color, @dark-edge-color)[@result];
+}
+
+.shadow-host-hover() {
+  box-shadow: .hover-shadow(@light-edge-color, @dark-edge-color)[@result];
+}
+
+.shadow-host-focus() {
+  box-shadow: .focus-shadow(@light-edge-color, @dark-edge-color)[@result];
 }

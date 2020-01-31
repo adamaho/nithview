@@ -10,19 +10,14 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class Card {
 
-  /** The title of the card */
-  @Prop() title!: string;
-
-  /** The description of the card */
-  @Prop() description!: string;
+  /** If true, card will be clickable */
+  @Prop() clickable: boolean = false;
 
   render() {
     return (
       <Host>
-        <nv-panel>
+        <nv-panel clickable={this.clickable}>
           <slot></slot>
-          <div class="nv-card-title">{this.title}</div>
-          <div class="nv-card-description">{this.description}</div>
         </nv-panel>
       </Host>
     );

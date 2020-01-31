@@ -37,7 +37,6 @@
 | `--nv-button-primary-active-box-shadow` | Box shadow of the primary button in active state |
 | `--nv-button-primary-background`        | Background of the primary button                 |
 | `--nv-button-primary-color`             | Color of the primary button                      |
-| `--nv-button-transition`                | Transition to apply to the button                |
 
 
 ----------------------------------------------

@@ -6,7 +6,6 @@
    * @prop --nv-button-font-size: Font size of text in the button
    * @prop --nv-button-height: Height of the button
    * @prop --nv-button-padding: Padding of the button
-   * @prop --nv-button-transition: Transition to apply to the button
    * @prop --nv-button-focus-box-shadow: Box shadow of the button in focus state
    * @prop --nv-button-hover-box-shadow: Box shadow of button in hover state
    *
@@ -19,12 +18,11 @@
    * @prop --nv-button-primary-active-box-shadow: Box shadow of the primary button in active state
    */
 
-  --border-radius: var(--nv-button-border-radius, 10px);
+  --border-radius: var(--nv-button-border-radius, @border-radius);
   --box-shadow: var(--nv-button-box-shadow, .shadow(@light-edge-color, @dark-edge-color)[@result]);
   --font-size: var(--nv-button-font-size, 14px);
   --height: var(--nv-button-height, 46px);
-  --padding: var(--nv-button-padding, 0px 16px);
-  --transition: var(--nv-button-transition, box-shadow 0.15s ease-in-out);
+  --padding: var(--nv-button-padding, 0px @padding-medium);
   --focus-box-shadow: var(--nv-button-focus-box-shadow, .focus-shadow(@light-edge-color, @dark-edge-color)[@result]);
   --hover-box-shadow: var(--nv-button-hover-box-shadow, .hover-shadow(@light-edge-color, @dark-edge-color)[@result]); 
 
@@ -69,13 +67,6 @@ button {
 
   margin: 0;
 
-  transition: var(--transition);
-
-  outline: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  
   .shadow-element(all);
 }
 
