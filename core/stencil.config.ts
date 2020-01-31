@@ -18,7 +18,12 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
-      footer: '**',
+      footer: '* NithView *',
+      strict: true
+    },
+    {
+      type: 'docs-json',
+      file: '../docs/core.json'
     },
     {
       type: 'www'
