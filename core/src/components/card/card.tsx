@@ -1,5 +1,8 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
+/**
+ * @slot - Content that is placed in the card above the title
+ */
 @Component({
   tag: 'nv-card',
   styleUrl: './card.less',
