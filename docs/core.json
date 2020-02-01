@@ -1,0 +1,294 @@
+{
+  "timestamp": "2020-02-01T19:35:41",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.8.6",
+    "typescriptVersion": "3.7.5"
+  },
+  "components": [
+    {
+      "filePath": "src/components/button/button.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-button",
+      "readme": "# nv-button\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "- Content that is placed in the button. Must be a `string`.",
+          "name": "slot"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If true, the button will be disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "loading",
+          "reflectToAttr": false,
+          "docs": "If true, the button will be in a loading state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"default\" | \"primary\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the button",
+          "docsTags": [],
+          "default": "'default'",
+          "values": [
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-button-border-radius",
+          "annotation": "prop",
+          "docs": "Border Radius of the button"
+        },
+        {
+          "name": "--nv-button-default-active-box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the default button in active state"
+        },
+        {
+          "name": "--nv-button-default-background",
+          "annotation": "prop",
+          "docs": "Background of the default button"
+        },
+        {
+          "name": "--nv-button-default-color",
+          "annotation": "prop",
+          "docs": "Color of the default button"
+        },
+        {
+          "name": "--nv-button-focus-box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the button in focus state"
+        },
+        {
+          "name": "--nv-button-font-size",
+          "annotation": "prop",
+          "docs": "Font size of text in the button"
+        },
+        {
+          "name": "--nv-button-height",
+          "annotation": "prop",
+          "docs": "Height of the button"
+        },
+        {
+          "name": "--nv-button-hover-box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of button in hover state"
+        },
+        {
+          "name": "--nv-button-padding",
+          "annotation": "prop",
+          "docs": "Padding of the button"
+        },
+        {
+          "name": "--nv-button-primary-active-box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the primary button in active state"
+        },
+        {
+          "name": "--nv-button-primary-background",
+          "annotation": "prop",
+          "docs": "Background of the primary button"
+        },
+        {
+          "name": "--nv-button-primary-color",
+          "annotation": "prop",
+          "docs": "Color of the primary button"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Content that is placed in the button. Must be a `string`."
+        }
+      ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/card/card.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-card",
+      "readme": "# nv-card\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "- Content that is placed in the card above the title",
+          "name": "slot"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "clickable",
+          "reflectToAttr": false,
+          "docs": "If true, card will be clickable",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-card-description-color",
+          "annotation": "prop",
+          "docs": "Color of the description"
+        },
+        {
+          "name": "--nv-card-description-font-size",
+          "annotation": "prop",
+          "docs": "Font size of the description"
+        },
+        {
+          "name": "--nv-card-title-color",
+          "annotation": "prop",
+          "docs": "Color of the title"
+        },
+        {
+          "name": "--nv-card-title-font-size",
+          "annotation": "prop",
+          "docs": "Font size of the title"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Content that is placed in the card above the title"
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "nv-panel"
+      ],
+      "dependencyGraph": {
+        "nv-card": [
+          "nv-panel"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/panel/panel.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-panel",
+      "readme": "# nv-panel\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "- Content that is placed in the panel",
+          "name": "slot"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "clickable",
+          "reflectToAttr": false,
+          "docs": "If true, active, hover, focus styles will be applied",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-panel-background",
+          "annotation": "prop",
+          "docs": "Background of the panel"
+        },
+        {
+          "name": "--nv-panel-border-radius",
+          "annotation": "prop",
+          "docs": "Border radius of the panel"
+        },
+        {
+          "name": "--nv-panel-padding",
+          "annotation": "prop",
+          "docs": "Padding in the panel"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Content that is placed in the panel"
+        }
+      ],
+      "dependents": [
+        "nv-card"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "nv-card": [
+          "nv-panel"
+        ]
+      }
+    }
+  ]
+}
