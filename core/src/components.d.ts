@@ -26,18 +26,14 @@ export namespace Components {
     */
     'type': ButtonType;
   }
-  interface NvCard {
-    /**
-    * If true, card will be clickable
-    */
-    'clickable': boolean;
-  }
   interface NvPanel {
     /**
     * If true, active, hover, focus styles will be applied
     */
     'clickable': boolean;
   }
+  interface NvSidebar {}
+  interface NvSidebarItem {}
 }
 
 declare global {
@@ -49,21 +45,28 @@ declare global {
     new (): HTMLNvButtonElement;
   };
 
-  interface HTMLNvCardElement extends Components.NvCard, HTMLStencilElement {}
-  var HTMLNvCardElement: {
-    prototype: HTMLNvCardElement;
-    new (): HTMLNvCardElement;
-  };
-
   interface HTMLNvPanelElement extends Components.NvPanel, HTMLStencilElement {}
   var HTMLNvPanelElement: {
     prototype: HTMLNvPanelElement;
     new (): HTMLNvPanelElement;
   };
+
+  interface HTMLNvSidebarElement extends Components.NvSidebar, HTMLStencilElement {}
+  var HTMLNvSidebarElement: {
+    prototype: HTMLNvSidebarElement;
+    new (): HTMLNvSidebarElement;
+  };
+
+  interface HTMLNvSidebarItemElement extends Components.NvSidebarItem, HTMLStencilElement {}
+  var HTMLNvSidebarItemElement: {
+    prototype: HTMLNvSidebarItemElement;
+    new (): HTMLNvSidebarItemElement;
+  };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
-    'nv-card': HTMLNvCardElement;
     'nv-panel': HTMLNvPanelElement;
+    'nv-sidebar': HTMLNvSidebarElement;
+    'nv-sidebar-item': HTMLNvSidebarItemElement;
   }
 }
 
@@ -82,23 +85,20 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
-  interface NvCard {
-    /**
-    * If true, card will be clickable
-    */
-    'clickable'?: boolean;
-  }
   interface NvPanel {
     /**
     * If true, active, hover, focus styles will be applied
     */
     'clickable'?: boolean;
   }
+  interface NvSidebar {}
+  interface NvSidebarItem {}
 
   interface IntrinsicElements {
     'nv-button': NvButton;
-    'nv-card': NvCard;
     'nv-panel': NvPanel;
+    'nv-sidebar': NvSidebar;
+    'nv-sidebar-item': NvSidebarItem;
   }
 }
 
@@ -109,8 +109,9 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
-      'nv-card': LocalJSX.NvCard & JSXBase.HTMLAttributes<HTMLNvCardElement>;
       'nv-panel': LocalJSX.NvPanel & JSXBase.HTMLAttributes<HTMLNvPanelElement>;
+      'nv-sidebar': LocalJSX.NvSidebar & JSXBase.HTMLAttributes<HTMLNvSidebarElement>;
+      'nv-sidebar-item': LocalJSX.NvSidebarItem & JSXBase.HTMLAttributes<HTMLNvSidebarItemElement>;
     }
   }
 }
