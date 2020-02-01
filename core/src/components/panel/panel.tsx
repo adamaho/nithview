@@ -24,6 +24,7 @@ export class Panel {
         class={{
           clickable: this.clickable
         }}
+        tabIndex={this.clickable ? 0 : -1}
       >
         <slot></slot>
       </Host>
