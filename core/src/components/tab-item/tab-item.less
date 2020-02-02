@@ -3,22 +3,22 @@
 :host {
 
   /**
-   * @prop --nv-panel-background: Background of the panel
-   * @prop --nv-panel-border-radius: Border radius of the panel
-   * @prop --nv-panel-padding: Padding in the panel
+   * @prop --nv-tab-item-height: Background of the tab-item
+   * @prop --nv-tab-item-border-radius: Border radius of the tab-item
+   * @prop --nv-tab-item-margin: Margin of the tab-item
+   * @prop --nv-tab-item-padding: Padding of the tab-item
    */
 
-  // --background: var(--nv-panel-background, @default-color);
-  // --border-radius: var(--nv-panel-border-radius, @border-radius);
-  // --padding: var(--nv-panel-padding, @padding-medium);
+  --height: var(--nv-tab-item-height, 46px);
+  --margin: var(--nv-tab-item-padding, @padding-extra-small);
+  --padding: var(--nv-tab-item-padding, 0 @padding-medium);
 
   display: flex;
   align-items: center;
 
-  height: 46px;
-  margin: 4px;
-  width: auto;
-  padding: 0 @padding-medium;
+  height: var(--height);
+  margin: var(--margin);
+  padding: var(--padding);
 
   cursor: pointer;
   .shadow-element(none);
