@@ -31,7 +31,7 @@ export class Tabs {
   */
   @Event() tabChange: EventEmitter<string | number>
 
-  handleTabClick = ({ detail }) => {
+  handleTabClick = ({ detail }: CustomEvent<string | number>) => {
     if (this.selectedTab === detail) {
       return;
     }

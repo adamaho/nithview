@@ -36,7 +36,10 @@
   }
 }
 
-:host(.selected)::before,
+:host(.selected)::before {
+  background: @primary-gradient;
+}
+
 :host(:active)::before {
   .shadow-host-active();
 }
