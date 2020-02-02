@@ -120,7 +120,7 @@ declare namespace LocalJSX {
     * Event that is emitted when the tab item is clicked
     * @interal
     */
-    'onNvTabItemClick'?: (event: CustomEvent<Key>) => void;
+    'onTabClick'?: (event: CustomEvent<Key>) => void;
     /**
     * If true, the tab item will be in the active state
     */
@@ -129,9 +129,8 @@ declare namespace LocalJSX {
   interface NvTabs {
     /**
     * Event that is emitted when a new tab item is selected
-    * @interal
     */
-    'onNvTabsChange'?: (event: CustomEvent<string | number>) => void;
+    'onTabChange'?: (event: CustomEvent<string | number>) => void;
     /**
     * Determines the orientation of the tabs
     */

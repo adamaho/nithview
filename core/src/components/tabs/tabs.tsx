@@ -28,17 +28,16 @@ export class Tabs {
 
   /**
    * Event that is emitted when a new tab item is selected
-   * @interal
   */
-  @Event() nvTabsChange: EventEmitter<string | number>
+  @Event() tabChange: EventEmitter<string | number>
 
-  handleTabItemClick = ({ detail }) => {
+  handleTabClick = ({ detail }) => {
     if (this.selectedTab === detail) {
       return;
     }
 
     this.selectedTab = detail;
-    this.nvTabsChange.emit(detail);
+    this.tabChange.emit(detail);
   }
 
   render() {
@@ -47,7 +46,7 @@ export class Tabs {
         class={{
           [this.type]: true
         }}
-        onNvTabItemClick={this.handleTabItemClick}
+        onTabClick={this.handleTabClick}
       >
         <slot></slot>
       </Host>

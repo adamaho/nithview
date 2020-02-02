@@ -27,14 +27,14 @@ export class TabItem {
    * Event that is emitted when the tab item is clicked
    * @interal
   */
-  @Event() nvTabItemClick!: EventEmitter<Key>
+  @Event() tabClick!: EventEmitter<Key>
 
-  onTabItemClick = () => {
-    this.nvTabItemClick.emit(this.key);
+  onTabClick = () => {
+    this.tabClick.emit(this.key);
   }
 
-  @Listen('nvTabsChange', { target: 'parent' })
-  onNvTabsChange({ detail }) {
+  @Listen('tabChange', { target: 'parent' })
+  onTabChange({ detail }) {
     this.selected = detail === this.key;
   }
 
@@ -45,7 +45,7 @@ export class TabItem {
           selected: this.selected
         }}
         tabIndex={0}
-        onClick={this.onTabItemClick}
+        onClick={this.onTabClick}
       >
         <slot></slot>
       </Host>
