@@ -1,6 +1,5 @@
 import {
   Component,
-  Element,
   Event,
   State,
   Host,
@@ -9,8 +8,11 @@ import {
   EventEmitter,
 } from '@stencil/core';
 
-export type TabsType = 'horizontal' | 'vertical';
+export type OrientationType = 'horizontal' | 'vertical';
 
+/**
+ * @slot - Collection of `nv-tab-item`'s.
+ */
 @Component({
   tag: 'nv-tabs',
   styleUrl: './tabs.less',
@@ -18,19 +20,16 @@ export type TabsType = 'horizontal' | 'vertical';
 })
 export class Tabs {
 
-  @Element() el!: HTMLElement;
-
   /** Determines the orientation of the tabs */
-  @Prop() type: TabsType = 'horizontal';
+  @Prop() orientation: OrientationType = 'horizontal';
 
   /** The tab that is currently selected */
   @State() selectedTab: string | number;
 
-  /**
-   * Event that is emitted when a new tab item is selected
-  */
+  /** Event that is emitted when a new tab item is selected */
   @Event() tabChange: EventEmitter<string | number>
 
+  /** When a tab is clicked, emit the change event. */
   handleTabClick = ({ detail }: CustomEvent<string | number>) => {
     if (this.selectedTab === detail) {
       return;
@@ -44,7 +43,7 @@ export class Tabs {
     return (
       <Host
         class={{
-          [this.type]: true
+          [this.orientation]: true
         }}
         onTabClick={this.handleTabClick}
       >

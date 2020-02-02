@@ -1,11 +1,22 @@
 @import '../../less/global.less';
 
 :host {
-  display: flex;
-  height: 60px;
-  width: auto;
-  padding: 0 @padding-medium;
+  /**
+   * @prop --nv-tabs-border-radius: Border radius of the tabs container
+   * @prop --nv-tabs-padding: Padding in the tabs container
+   */
+
+   --border-radius: var(--nv-tabs-border-radius, @border-radius);
+   --padding: var(--nv-tabs-padding, @padding-small); 
+
+  display: inline-flex;
+  padding: var(--padding);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+
+  .shadow-host-active();
 }
+
 
 :host(.horizontal) {
   flex-direction: row;
@@ -15,5 +26,9 @@
 }
 
 :host(.vertical) {
+  display: flex;
   flex-direction: column;
 }
+
+
+

@@ -14,9 +14,10 @@
 
   display: flex;
   align-items: center;
-  margin: 0 8px;
 
   height: 46px;
+  margin: 4px;
+  width: auto;
   padding: 0 @padding-medium;
 
   cursor: pointer;
@@ -36,10 +37,10 @@
   }
 }
 
-:host(.selected)::before {
-  background: @primary-gradient;
-}
-
 :host(:active)::before {
   .shadow-host-active();
+}
+
+:host(.selected)::before {
+  .shadow-host();
 }

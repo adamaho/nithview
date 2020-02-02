@@ -14,7 +14,7 @@ import {
   Key,
 } from './components/tab-item/tab-item';
 import {
-  TabsType,
+  OrientationType,
 } from './components/tabs/tabs';
 
 export namespace Components {
@@ -42,17 +42,17 @@ export namespace Components {
     /**
     * If true, the tab item will be in the active state
     */
-    'key': string | number;
-    /**
-    * If true, the tab item will be in the active state
-    */
     'selected': boolean;
+    /**
+    * Name of the tab. Used to determine which tab is currently selected.
+    */
+    'tab': string | number;
   }
   interface NvTabs {
     /**
     * Determines the orientation of the tabs
     */
-    'type': TabsType;
+    'orientation': OrientationType;
   }
 }
 
@@ -113,10 +113,6 @@ declare namespace LocalJSX {
   }
   interface NvTabItem {
     /**
-    * If true, the tab item will be in the active state
-    */
-    'key': string | number;
-    /**
     * Event that is emitted when the tab item is clicked
     * @interal
     */
@@ -125,6 +121,10 @@ declare namespace LocalJSX {
     * If true, the tab item will be in the active state
     */
     'selected'?: boolean;
+    /**
+    * Name of the tab. Used to determine which tab is currently selected.
+    */
+    'tab': string | number;
   }
   interface NvTabs {
     /**
@@ -134,7 +134,7 @@ declare namespace LocalJSX {
     /**
     * Determines the orientation of the tabs
     */
-    'type'?: TabsType;
+    'orientation'?: OrientationType;
   }
 
   interface IntrinsicElements {

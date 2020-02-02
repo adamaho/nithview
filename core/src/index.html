@@ -11,13 +11,20 @@
 
 </head>
 <body>
-  <nv-button>asdfasdf</nv-button>
-  <nv-tabs onnvtabschange="onClick()">
-    <nv-tab-item key="mom">Mom</nv-tab-item>
-    <nv-tab-item key="dad">Dad</nv-tab-item>
-    <nv-tab-item key="andrea">Andrea</nv-tab-item>
-    <nv-tab-item key="matt">Matt</nv-tab-item>
-    <nv-tab-item key="adam">Adam</nv-tab-item>
+  <nv-tabs orientation="horizontal">
+    <nv-tab-item tab="mom">Mom</nv-tab-item>
+    <nv-tab-item tab="dad">Dad</nv-tab-item>
+    <nv-tab-item tab="andrea">Andrea</nv-tab-item>
+    <nv-tab-item tab="matt">Matt</nv-tab-item>
+    <nv-tab-item tab="adam">Adam</nv-tab-item>
+  </nv-tabs>
+
+  <nv-tabs id="bar" orientation="vertical">
+    <nv-tab-item tab="mom">Mom</nv-tab-item>
+    <nv-tab-item tab="dad">Dad</nv-tab-item>
+    <nv-tab-item tab="andrea">Andrea</nv-tab-item>
+    <nv-tab-item tab="matt">Matt</nv-tab-item>
+    <nv-tab-item tab="adam">Adam</nv-tab-item>
   </nv-tabs>
 </body>
 <style>
@@ -45,8 +52,9 @@
   }
 </style>
 <script>
-   const tabsElement = document.querySelector('nv-tabs');
-    tabsElement.addEventListener('tabChange', event => { console.log(event.detail)})
+  const tabsElement = document.querySelectorAll('nv-tabs');
+  tabsElement[0].addEventListener('tabChange', event => { console.log(event.detail)})
+  tabsElement[1].addEventListener('tabChange', event => { console.log(event.detail)})
 </script>
 </script>
 </html>
