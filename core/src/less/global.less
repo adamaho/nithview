@@ -72,8 +72,6 @@
   position: relative;
   z-index: 2;
 
-  transition: var(--nv-box-shadow-transition, box-shadow 0.15s ease-in-out);
-
   outline: none;
   touch-action: manipulation;
   user-select: none;
@@ -96,7 +94,7 @@
     box-shadow: -8px -6px 20px @light-edge-color, 8px 6px 15px rgba(@dark-edge-color, 0.25);
     background: transparent;
   
-    transition: box-shadow 0.1s ease-in-out;
+    transition: var(--nv-box-shadow-transition, box-shadow 0.1s ease-in-out);
   }
 }
 
