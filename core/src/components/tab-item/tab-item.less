@@ -1,0 +1,42 @@
+@import '../../less/global.less';
+
+:host {
+
+  /**
+   * @prop --nv-panel-background: Background of the panel
+   * @prop --nv-panel-border-radius: Border radius of the panel
+   * @prop --nv-panel-padding: Padding in the panel
+   */
+
+  // --background: var(--nv-panel-background, @default-color);
+  // --border-radius: var(--nv-panel-border-radius, @border-radius);
+  // --padding: var(--nv-panel-padding, @padding-medium);
+
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+
+  height: 46px;
+  padding: 0 @padding-medium;
+
+  cursor: pointer;
+  .shadow-element(none);
+}
+
+:host::before {
+  box-shadow: none;
+}
+
+@media(any-hover: hover) {
+  :host(:hover)::before {
+    .shadow-host-hover();
+  }
+  :host(:focus)::before {
+    .shadow-host-focus();
+  }
+}
+
+:host(.selected)::before,
+:host(:active)::before {
+  .shadow-host-active();
+}

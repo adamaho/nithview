@@ -1,0 +1,19 @@
+@import '../../less/global.less';
+
+:host {
+  display: flex;
+  height: 60px;
+  width: auto;
+  padding: 0 @padding-medium;
+}
+
+:host(.horizontal) {
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: flex-end;
+}
+
+:host(.vertical) {
+  flex-direction: column;
+}

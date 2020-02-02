@@ -11,6 +11,13 @@
 
 </head>
 <body>
+  <nv-tabs onnvtabschange="onClick()">
+    <nv-tab-item key="mom">Mom</nv-tab-item>
+    <nv-tab-item key="dad">Dad</nv-tab-item>
+    <nv-tab-item key="andrea">Andrea</nv-tab-item>
+    <nv-tab-item key="matt">Matt</nv-tab-item>
+    <nv-tab-item key="adam">Adam</nv-tab-item>
+  </nv-tabs>
 </body>
 <style>
   html {
@@ -21,7 +28,7 @@
     height: 100%;
     font-family: 'Poppins', sans-serif;
     background: #E9F2FC;
-    margin: 0;
+    margin: 20px;
   }
 
   .center {
@@ -37,8 +44,8 @@
   }
 </style>
 <script>
-  function onClick() {
-    console.log('clicked');
-  }
+   const tabsElement = document.querySelector('nv-tabs');
+    tabsElement.addEventListener('nvTabsChange', event => { console.log(event.detail)})
+</script>
 </script>
 </html>
