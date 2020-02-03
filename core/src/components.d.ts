@@ -10,12 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ButtonType,
 } from './components/button/button';
-import {
-  Key,
-} from './components/tab-item/tab-item';
-import {
-  OrientationType,
-} from './components/tabs/tabs';
 
 export namespace Components {
   interface NvButton {
@@ -48,12 +42,7 @@ export namespace Components {
     */
     'tab': string | number;
   }
-  interface NvTabs {
-    /**
-    * Determines the orientation of the tabs
-    */
-    'orientation': OrientationType;
-  }
+  interface NvTabs {}
 }
 
 declare global {
@@ -116,7 +105,7 @@ declare namespace LocalJSX {
     * Event that is emitted when the tab item is clicked
     * @interal
     */
-    'onTabClick'?: (event: CustomEvent<Key>) => void;
+    'onTabClick'?: (event: CustomEvent<any>) => void;
     /**
     * If true, the tab item will be in the active state
     */
@@ -131,10 +120,6 @@ declare namespace LocalJSX {
     * Event that is emitted when a new tab item is selected
     */
     'onTabChange'?: (event: CustomEvent<string | number>) => void;
-    /**
-    * Determines the orientation of the tabs
-    */
-    'orientation'?: OrientationType;
   }
 
   interface IntrinsicElements {

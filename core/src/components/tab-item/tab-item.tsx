@@ -8,7 +8,7 @@ import {
   Listen,
 } from '@stencil/core';
 
-export type Key = string | number;
+// export type Tab = string | number;
 
 /**
  * @slot - Content that is placed in the in the tab item. Must be a `string`.
@@ -31,10 +31,10 @@ export class TabItem {
    * Event that is emitted when the tab item is clicked
    * @interal
   */
-  @Event() tabClick!: EventEmitter<Key>
+  @Event() tabClick!: EventEmitter<any>
 
-  onTabClick = () => {
-    this.tabClick.emit(this.tab);
+  onTabClick = (e) => {
+    this.tabClick.emit({ tab: this.tab, element: e.target });
   }
 
   @Listen('tabChange', { target: 'parent' })

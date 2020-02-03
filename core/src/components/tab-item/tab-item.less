@@ -10,15 +10,19 @@
    */
 
   --height: var(--nv-tab-item-height, 46px);
-  --margin: var(--nv-tab-item-padding, @padding-extra-small);
+  --margin: var(--nv-tab-item-padding, @padding-extra-small @padding-small);
   --padding: var(--nv-tab-item-padding, 0 @padding-medium);
 
   display: flex;
   align-items: center;
 
+  position: relative;
+
   height: var(--height);
   margin: var(--margin);
   padding: var(--padding);
+
+  box-sizing: border-box;
 
   cursor: pointer;
   .shadow-element(none);
@@ -39,8 +43,4 @@
 
 :host(:active)::before {
   .shadow-host-active();
-}
-
-:host(.selected)::before {
-  .shadow-host();
 }
