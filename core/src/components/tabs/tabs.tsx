@@ -15,7 +15,7 @@ export interface SelectedTab {
   x: number;
 }
 
-  /** Retrieves the selected tab item element */
+/** Retrieves the selected tab item element */
 const getSelectedTab = (tabItems: HTMLNvTabItemElement[], tabName: string): HTMLNvTabItemElement => {
   const tabEl = tabItems.find((child) => child.tab === tabName);
 
@@ -42,7 +42,7 @@ export class Tabs {
   @Element() el: HTMLNvTabsElement;
 
   /** The default selected tab */
-  @Prop({ mutable: true }) defaultSelectedTab: string;
+  @Prop() defaultSelectedTab!: string;
 
   /** The tab that is currently selected */
   @State() selectedTab: SelectedTab;
@@ -65,10 +65,9 @@ export class Tabs {
 
   componentDidLoad() {
     const tabItems = Array.from(this.el.querySelectorAll<HTMLNvTabItemElement>('nv-tab-item'));
+    const defaultSelectTabEl = getSelectedTab(tabItems, this.defaultSelectedTab);
 
-    const tab = getSelectedTab(tabItems, this.defaultSelectedTab);
-
-    if (tab == null) {
+    if (defaultSelectTabEl == null) {
       return;
     }
 
@@ -76,9 +75,9 @@ export class Tabs {
     // until after the inital lifecycle
     setTimeout(() => {
       this.selectedTab = {
-        name: tab.tab,
-        width: tab.offsetWidth,
-        x: tab.offsetLeft
+        name: defaultSelectTabEl.tab,
+        width: defaultSelectTabEl.offsetWidth,
+        x: defaultSelectTabEl.offsetLeft
       };
     }, 0)
   }

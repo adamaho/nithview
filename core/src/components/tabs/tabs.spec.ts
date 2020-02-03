@@ -11,10 +11,6 @@ describe('nv-tabs', () => {
     expect(new Tabs()).toBeTruthy();
   });
 
-  it('builds', () => {
-    expect(new Tabs()).toBeTruthy();
-  });
-
 it('renders', async () => {
     const page = await newSpecPage({
       components: [Tabs],

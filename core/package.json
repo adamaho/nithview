@@ -18,6 +18,7 @@
     "build": "stencil build --docs --docs-json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec",
+    "test:e2e": "stencil test --e2e",
     "test.watch": "stencil test --spec --watchAll",
     "generate": "stencil generate"
   },

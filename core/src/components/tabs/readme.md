@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                            | Type                         | Default        |
-| ------------- | ------------- | -------------------------------------- | ---------------------------- | -------------- |
-| `orientation` | `orientation` | Determines the orientation of the tabs | `"horizontal" \| "vertical"` | `'horizontal'` |
+| Property                          | Attribute              | Description              | Type     | Default     |
+| --------------------------------- | ---------------------- | ------------------------ | -------- | ----------- |
+| `defaultSelectedTab` _(required)_ | `default-selected-tab` | The default selected tab | `string` | `undefined` |
 
 
 ## Events
@@ -24,14 +24,6 @@
 | Slot | Description                    |
 | ---- | ------------------------------ |
 |      | Collection of `nv-tab-item`'s. |
-
-
-## CSS Custom Properties
-
-| Name                      | Description                         |
-| ------------------------- | ----------------------------------- |
-| `--nv-tabs-border-radius` | Border radius of the tabs container |
-| `--nv-tabs-padding`       | Padding in the tabs container       |
 
 
 ----------------------------------------------

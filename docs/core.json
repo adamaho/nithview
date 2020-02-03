@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-02T22:34:49",
+  "timestamp": "2020-02-03T20:58:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -196,6 +196,7 @@
       "filePath": "src/components/tab-item/tab-item.tsx",
       "encapsulation": "shadow",
       "tag": "nv-tab-item",
+      "readme": "# nv-tab-item\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -210,34 +211,14 @@
       "usage": {},
       "props": [
         {
-          "name": "selected",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "selected",
-          "reflectToAttr": false,
-          "docs": "If true, the tab item will be in the active state",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "tab",
-          "type": "number | string",
+          "type": "string",
           "mutable": false,
           "attr": "tab",
           "reflectToAttr": false,
           "docs": "Name of the tab. Used to determine which tab is currently selected.",
           "docsTags": [],
           "values": [
-            {
-              "type": "number"
-            },
             {
               "type": "string"
             }
@@ -250,7 +231,7 @@
       "events": [
         {
           "event": "tabClick",
-          "detail": "number | string",
+          "detail": "SelectedTab",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -302,6 +283,7 @@
       "filePath": "src/components/tabs/tabs.tsx",
       "encapsulation": "shadow",
       "tag": "nv-tabs",
+      "readme": "# nv-tabs\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -312,26 +294,20 @@
       "usage": {},
       "props": [
         {
-          "name": "orientation",
-          "type": "\"horizontal\" | \"vertical\"",
+          "name": "defaultSelectedTab",
+          "type": "string",
           "mutable": false,
-          "attr": "orientation",
+          "attr": "default-selected-tab",
           "reflectToAttr": false,
-          "docs": "Determines the orientation of the tabs",
+          "docs": "The default selected tab",
           "docsTags": [],
-          "default": "'horizontal'",
           "values": [
             {
-              "value": "horizontal",
-              "type": "string"
-            },
-            {
-              "value": "vertical",
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         }
       ],
       "methods": [],
@@ -346,18 +322,7 @@
           "docsTags": []
         }
       ],
-      "styles": [
-        {
-          "name": "--nv-tabs-border-radius",
-          "annotation": "prop",
-          "docs": "Border radius of the tabs container"
-        },
-        {
-          "name": "--nv-tabs-padding",
-          "annotation": "prop",
-          "docs": "Padding in the tabs container"
-        }
-      ],
+      "styles": [],
       "slots": [
         {
           "name": "",

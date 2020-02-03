@@ -7,17 +7,16 @@
 
 ## Properties
 
-| Property           | Attribute  | Description                                                         | Type               | Default     |
-| ------------------ | ---------- | ------------------------------------------------------------------- | ------------------ | ----------- |
-| `selected`         | `selected` | If true, the tab item will be in the active state                   | `boolean`          | `false`     |
-| `tab` _(required)_ | `tab`      | Name of the tab. Used to determine which tab is currently selected. | `number \| string` | `undefined` |
+| Property           | Attribute | Description                                                         | Type     | Default     |
+| ------------------ | --------- | ------------------------------------------------------------------- | -------- | ----------- |
+| `tab` _(required)_ | `tab`     | Name of the tab. Used to determine which tab is currently selected. | `string` | `undefined` |
 
 
 ## Events
 
-| Event      | Description                                        | Type                            |
-| ---------- | -------------------------------------------------- | ------------------------------- |
-| `tabClick` | Event that is emitted when the tab item is clicked | `CustomEvent<number \| string>` |
+| Event      | Description                                        | Type                       |
+| ---------- | -------------------------------------------------- | -------------------------- |
+| `tabClick` | Event that is emitted when the tab item is clicked | `CustomEvent<SelectedTab>` |
 
 
 ## Slots

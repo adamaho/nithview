@@ -115,10 +115,6 @@ declare namespace LocalJSX {
     */
     'onTabClick'?: (event: CustomEvent<SelectedTab>) => void;
     /**
-    * If true, the tab item will be in the active state
-    */
-    'selected'?: boolean;
-    /**
     * Name of the tab. Used to determine which tab is currently selected.
     */
     'tab': string;
@@ -127,7 +123,7 @@ declare namespace LocalJSX {
     /**
     * The default selected tab
     */
-    'defaultSelectedTab'?: string;
+    'defaultSelectedTab': string;
     /**
     * Event that is emitted when a new tab item is selected
     */
