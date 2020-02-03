@@ -1,6 +1,7 @@
 import {
   EventEmitter,
   Component,
+  Element,
   Event,
   Prop,
   Host,
@@ -23,11 +24,13 @@ import {
 })
 export class TabItem {
 
+  @Element() el!: HTMLNvTabItemElement;
+
   /** If true, the tab item will be in the active state */
   @Prop({ mutable: true }) selected: boolean = false;
 
   /** Name of the tab. Used to determine which tab is currently selected. */
-  @Prop() tab!: string | number;
+  @Prop() tab!: string;
 
   /**
    * Event that is emitted when the tab item is clicked

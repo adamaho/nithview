@@ -1,7 +1,9 @@
 import {
   Component,
+  Element,
   Event,
   State,
+  Prop,
   Host,
   h,
   EventEmitter,
@@ -13,6 +15,19 @@ export interface SelectedTab {
   x: number;
 }
 
+  /** Retrieves the selected tab item element */
+const getSelectedTab = (tabItems: HTMLNvTabItemElement[], tabName: string): HTMLNvTabItemElement => {
+  const tabEl = tabItems.find((child) => child.tab === tabName);
+
+  if (!tabEl) {
+    console.warn(`tab=${tabName} does not exist`);
+    return;
+  }
+
+  return tabEl;
+}
+
+
 /**
  * @slot - Collection of `nv-tab-item`'s.
  */
@@ -22,6 +37,12 @@ export interface SelectedTab {
   shadow: true
 })
 export class Tabs {
+
+  /** Tabs element */
+  @Element() el: HTMLNvTabsElement;
+
+  /** The default selected tab */
+  @Prop({ mutable: true }) defaultSelectedTab: string;
 
   /** The tab that is currently selected */
   @State() selectedTab: SelectedTab;
@@ -38,7 +59,28 @@ export class Tabs {
     this.selectedTab = {
       ...detail
     }
+
     this.tabChange.emit(detail.name);
+  }
+
+  componentDidLoad() {
+    const tabItems = Array.from(this.el.querySelectorAll<HTMLNvTabItemElement>('nv-tab-item'));
+
+    const tab = getSelectedTab(tabItems, this.defaultSelectedTab);
+
+    if (tab == null) {
+      return;
+    }
+
+    // setTimeout to defer the execution of this state change
+    // until after the inital lifecycle
+    setTimeout(() => {
+      this.selectedTab = {
+        name: tab.tab,
+        width: tab.offsetWidth,
+        x: tab.offsetLeft
+      };
+    }, 0)
   }
 
   render() {
@@ -53,18 +95,12 @@ export class Tabs {
           <div
             class="nv-tab-indicator"
             style={{
-              position: 'absolute',
               transform: `translate(${this.selectedTab.x}px, 0px)`,
-              transformOrigin: 'center',
-              height: '5px',
               width: `${this.selectedTab.width}px`,
-              left: '0px',
-              transition: 'all 0.2s ease-in-out'
             }}
           />
         }
       </Host>
     );
   }
-
 }

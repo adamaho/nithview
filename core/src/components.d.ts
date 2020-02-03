@@ -43,9 +43,14 @@ export namespace Components {
     /**
     * Name of the tab. Used to determine which tab is currently selected.
     */
-    'tab': string | number;
+    'tab': string;
   }
-  interface NvTabs {}
+  interface NvTabs {
+    /**
+    * The default selected tab
+    */
+    'defaultSelectedTab': string;
+  }
 }
 
 declare global {
@@ -116,9 +121,13 @@ declare namespace LocalJSX {
     /**
     * Name of the tab. Used to determine which tab is currently selected.
     */
-    'tab': string | number;
+    'tab': string;
   }
   interface NvTabs {
+    /**
+    * The default selected tab
+    */
+    'defaultSelectedTab'?: string;
     /**
     * Event that is emitted when a new tab item is selected
     */
