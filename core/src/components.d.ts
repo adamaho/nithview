@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ButtonType,
 } from './components/button/button';
+import {
+  SelectedTab,
+} from './components/tabs/tabs';
 
 export namespace Components {
   interface NvButton {
@@ -105,7 +108,7 @@ declare namespace LocalJSX {
     * Event that is emitted when the tab item is clicked
     * @interal
     */
-    'onTabClick'?: (event: CustomEvent<any>) => void;
+    'onTabClick'?: (event: CustomEvent<SelectedTab>) => void;
     /**
     * If true, the tab item will be in the active state
     */

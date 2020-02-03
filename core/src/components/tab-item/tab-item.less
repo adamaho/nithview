@@ -9,6 +9,7 @@
    * @prop --nv-tab-item-padding: Padding of the tab-item
    */
 
+  --color: var(--nv-tab-item-color, @primary-text-color);
   --height: var(--nv-tab-item-height, 46px);
   --margin: var(--nv-tab-item-padding, @padding-extra-small @padding-small);
   --padding: var(--nv-tab-item-padding, 0 @padding-medium);
@@ -21,6 +22,7 @@
   height: var(--height);
   margin: var(--margin);
   padding: var(--padding);
+  color: var(--color);
 
   box-sizing: border-box;
 
@@ -33,12 +35,16 @@
 }
 
 @media(any-hover: hover) {
-  :host(:hover)::before {
-    .shadow-host-hover();
-  }
   :host(:focus)::before {
     .shadow-host-focus();
   }
+  :host(:hover)::before {
+    .shadow-host-hover();
+  }
+}
+
+:host(.selected)::before {
+  box-shadow: none;
 }
 
 :host(:active)::before {

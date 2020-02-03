@@ -7,6 +7,12 @@ import {
   EventEmitter,
 } from '@stencil/core';
 
+export interface SelectedTab {
+  name: string | number;
+  width: number;
+  x: number;
+}
+
 /**
  * @slot - Collection of `nv-tab-item`'s.
  */
@@ -18,26 +24,21 @@ import {
 export class Tabs {
 
   /** The tab that is currently selected */
-  @State() selectedTab: string | number;
-
-  /** The tab that is currently selected */
-  @State() foo: { width: number, left: number } = { width: 0, left: 0};
+  @State() selectedTab: SelectedTab;
 
   /** Event that is emitted when a new tab item is selected */
   @Event() tabChange: EventEmitter<string | number>
 
   /** When a tab is clicked, emit the change event. */
-  handleTabClick = ({ detail }: CustomEvent<any>) => {
-    if (this.selectedTab === detail.tab) {
+  handleTabClick = ({ detail }: CustomEvent<SelectedTab>) => {
+    if (this.selectedTab && this.selectedTab.name === detail.name) {
       return;
     }
 
-    this.foo = {
-      width: detail.element.offsetWidth,
-      left: detail.element.offsetLeft
+    this.selectedTab = {
+      ...detail
     }
-    this.selectedTab = detail.tab;
-    this.tabChange.emit(detail.tab);
+    this.tabChange.emit(detail.name);
   }
 
   render() {
@@ -48,19 +49,20 @@ export class Tabs {
         <div class="nv-tabs-container">
           <slot></slot>
         </div>
-        <div
-          class="nv-tab-indicator"
-          style={{
-            position: 'absolute',
-            transform: `translate(${this.foo.left}px, 0px)`,
-            transformOrigin: 'center',
-            height: '5px',
-            background: 'red',
-            width: `${this.foo.width}px`,
-            left: '0px',
-            transition: 'all 0.2s ease-in-out'
-          }}
-        />
+        {this.selectedTab &&
+          <div
+            class="nv-tab-indicator"
+            style={{
+              position: 'absolute',
+              transform: `translate(${this.selectedTab.x}px, 0px)`,
+              transformOrigin: 'center',
+              height: '5px',
+              width: `${this.selectedTab.width}px`,
+              left: '0px',
+              transition: 'all 0.2s ease-in-out'
+            }}
+          />
+        }
       </Host>
     );
   }
