@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { defineCustomElements, JSX as LocalJSX } from '@nithview/core/loader';
+import { defineCustomElements, JSX as LocalJSX, applyPolyfills } from '@nithview/core/loader';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 type StencilProps<T> = {
@@ -19,4 +19,6 @@ type StencilProps<T> = {
     }
   }
 
-defineCustomElements(window);
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
