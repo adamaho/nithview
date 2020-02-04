@@ -47,6 +47,6 @@
   box-shadow: none;
 }
 
-:host(:active)::before {
+:host(:active:not(.selected))::before {
   .shadow-host-active();
 }

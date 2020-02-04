@@ -79,6 +79,8 @@ export class Tabs {
         width: defaultSelectTabEl.offsetWidth,
         x: defaultSelectTabEl.offsetLeft
       };
+
+      this.tabChange.emit(defaultSelectTabEl.tab);
     }, 0)
   }
 
