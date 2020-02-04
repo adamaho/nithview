@@ -4,21 +4,24 @@ import './App.css';
 
 const App = () => {
 
-  const fooRef = React.useRef(null);
+  const fooRef = React.useRef<HTMLNvTabsElement>(null);
 
-  // React.useEffect(() => {
-  //   if (fooRef.current !== null) {
-  //     // @ts-ignore
+  React.useEffect(() => {
+    const foo = fooRef;
+    function onTabChange(ev: any) {
+      console.log(ev.detail);
+    }
 
-  //     console.log('heree');
-  //     //@ts-ignore
-  //     fooRef.current.addEventListener('tabChange', ({ detail }: any) => console.log(detail))
-  //   }
+    if (foo.current !== null) {
+      foo.current.addEventListener('tabChange', onTabChange);
+    }
 
-  //   // return () => {
-  //   //   fooRef.current.removeEventListener(() => );
-  //   // }
-  // }, []);
+    return () => {
+      if (foo.current) {
+        foo.current.removeEventListener('tabChange', onTabChange);
+      }
+    }
+  }, []);
   return (
     <div className="root">
       <div className="header">

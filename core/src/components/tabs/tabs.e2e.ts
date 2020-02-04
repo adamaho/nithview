@@ -41,11 +41,9 @@ describe('nv-tabs', () => {
     `);
 
     const onTabChange = await page.spyOnEvent('tabChange');
-
     const tabItemEl = await page.find('.test1');
     
     await tabItemEl.click();
-
     await page.waitForChanges();
 
     expect(onTabChange).toHaveReceivedEventDetail('test1');
