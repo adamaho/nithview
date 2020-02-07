@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'nv-layout-content',
-  styleUrl: 'layout-content.css',
+  styleUrl: './layout-content.less',
   shadow: true
 })
 export class LayoutContent {

@@ -29,6 +29,10 @@ export namespace Components {
     */
     'type': ButtonType;
   }
+  interface NvLayout {}
+  interface NvLayoutContent {}
+  interface NvLayoutFooter {}
+  interface NvLayoutHeader {}
   interface NvPanel {
     /**
     * If true, active, hover, focus styles will be applied
@@ -62,6 +66,30 @@ declare global {
     new (): HTMLNvButtonElement;
   };
 
+  interface HTMLNvLayoutElement extends Components.NvLayout, HTMLStencilElement {}
+  var HTMLNvLayoutElement: {
+    prototype: HTMLNvLayoutElement;
+    new (): HTMLNvLayoutElement;
+  };
+
+  interface HTMLNvLayoutContentElement extends Components.NvLayoutContent, HTMLStencilElement {}
+  var HTMLNvLayoutContentElement: {
+    prototype: HTMLNvLayoutContentElement;
+    new (): HTMLNvLayoutContentElement;
+  };
+
+  interface HTMLNvLayoutFooterElement extends Components.NvLayoutFooter, HTMLStencilElement {}
+  var HTMLNvLayoutFooterElement: {
+    prototype: HTMLNvLayoutFooterElement;
+    new (): HTMLNvLayoutFooterElement;
+  };
+
+  interface HTMLNvLayoutHeaderElement extends Components.NvLayoutHeader, HTMLStencilElement {}
+  var HTMLNvLayoutHeaderElement: {
+    prototype: HTMLNvLayoutHeaderElement;
+    new (): HTMLNvLayoutHeaderElement;
+  };
+
   interface HTMLNvPanelElement extends Components.NvPanel, HTMLStencilElement {}
   var HTMLNvPanelElement: {
     prototype: HTMLNvPanelElement;
@@ -81,6 +109,10 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
+    'nv-layout': HTMLNvLayoutElement;
+    'nv-layout-content': HTMLNvLayoutContentElement;
+    'nv-layout-footer': HTMLNvLayoutFooterElement;
+    'nv-layout-header': HTMLNvLayoutHeaderElement;
     'nv-panel': HTMLNvPanelElement;
     'nv-tab-item': HTMLNvTabItemElement;
     'nv-tabs': HTMLNvTabsElement;
@@ -102,6 +134,10 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
+  interface NvLayout {}
+  interface NvLayoutContent {}
+  interface NvLayoutFooter {}
+  interface NvLayoutHeader {}
   interface NvPanel {
     /**
     * If true, active, hover, focus styles will be applied
@@ -132,6 +168,10 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'nv-button': NvButton;
+    'nv-layout': NvLayout;
+    'nv-layout-content': NvLayoutContent;
+    'nv-layout-footer': NvLayoutFooter;
+    'nv-layout-header': NvLayoutHeader;
     'nv-panel': NvPanel;
     'nv-tab-item': NvTabItem;
     'nv-tabs': NvTabs;
@@ -145,6 +185,10 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
+      'nv-layout': LocalJSX.NvLayout & JSXBase.HTMLAttributes<HTMLNvLayoutElement>;
+      'nv-layout-content': LocalJSX.NvLayoutContent & JSXBase.HTMLAttributes<HTMLNvLayoutContentElement>;
+      'nv-layout-footer': LocalJSX.NvLayoutFooter & JSXBase.HTMLAttributes<HTMLNvLayoutFooterElement>;
+      'nv-layout-header': LocalJSX.NvLayoutHeader & JSXBase.HTMLAttributes<HTMLNvLayoutHeaderElement>;
       'nv-panel': LocalJSX.NvPanel & JSXBase.HTMLAttributes<HTMLNvPanelElement>;
       'nv-tab-item': LocalJSX.NvTabItem & JSXBase.HTMLAttributes<HTMLNvTabItemElement>;
       'nv-tabs': LocalJSX.NvTabs & JSXBase.HTMLAttributes<HTMLNvTabsElement>;
