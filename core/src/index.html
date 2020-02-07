@@ -11,6 +11,15 @@
 
 </head>
 <body>
+  <div class="container">
+    <nv-tabs default-selected-tab="logsearch">
+      <nv-tab-item tab="dashboard">Dashboard</nv-tab-item>
+      <nv-tab-item tab="logsearch">Logsearch</nv-tab-item>
+      <nv-tab-item tab="components">Components</nv-tab-item>
+      <nv-tab-item tab="risk">Risk</nv-tab-item>
+      <nv-tab-item tab="user">User</nv-tab-item>
+    </nv-tabs>
+  </div>
 </body>
 <style>
   html {
@@ -21,7 +30,7 @@
     height: 100%;
     font-family: 'Poppins', sans-serif;
     background: #E9F2FC;
-    margin: 0;
+    margin: 20px;
   }
 
   .center {
@@ -32,13 +41,18 @@
     height: 100%;
   }
 
+  .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   :root {
     --nv-color: #363B58;
   }
 </style>
 <script>
-  function onClick() {
-    console.log('clicked');
-  }
+  const tabsElement = document.querySelectorAll('nv-tabs');
+  tabsElement[0].addEventListener('tabChange', event => { console.log(event.detail)})
+</script>
 </script>
 </html>

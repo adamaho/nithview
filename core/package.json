@@ -1,6 +1,6 @@
 {
   "name": "@nithview/core",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Skeumorphic Web Component Library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,7 +17,7 @@
   "scripts": {
     "build": "stencil build --docs --docs-json",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec",
+    "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --watchAll",
     "generate": "stencil generate"
   },

@@ -18,8 +18,13 @@
 ------------------------ */
 @border-radius: 10px;
 
+/* Gradients
+------------------------ */
+@primary-gradient: linear-gradient(90deg, @primary-color 0%, @secondary-color 100%);
+
 /* padding
 ------------------------ */
+@padding-extra-small: 4px;
 @padding-small: 8px;
 @padding-medium: 16px;
 @padding-large: 24px;
@@ -32,7 +37,7 @@
 }
   
 .active-shadow(@light-edge-color, @dark-edge-color) {
-  @result: inset -2px -3px 2px rgba(@light-edge-color, 0.6), inset 2px 3px 2px rgba(@dark-edge-color, 0.26)
+  @result: inset -2px -3px 2px rgba(@light-edge-color, 0.6), inset 2px 3px 2px rgba(@dark-edge-color, 0.15)
 }
 
 .hover-shadow(@light-edge-color, @dark-edge-color) {
@@ -44,7 +49,6 @@
 }
 
 /* element used to create skeumorphic box-shadows around elements
- * parent must be a div and not a host
 ------------------------ */
 .shadow-element(@events) when (@events = none) {};
 
@@ -69,8 +73,6 @@
   position: relative;
   z-index: 2;
 
-  transition: var(--nv-box-shadow-transition, box-shadow 0.15s ease-in-out);
-
   outline: none;
   touch-action: manipulation;
   user-select: none;
@@ -93,8 +95,12 @@
     box-shadow: -8px -6px 20px @light-edge-color, 8px 6px 15px rgba(@dark-edge-color, 0.25);
     background: transparent;
   
-    transition: box-shadow 0.1s ease-in-out;
+    transition: var(--nv-box-shadow-transition, box-shadow 0.1s ease-in-out);
   }
+}
+
+.shadow-host() {
+  box-shadow: .shadow(@light-edge-color, @dark-edge-color)[@result];
 }
 
 .shadow-host-active() {

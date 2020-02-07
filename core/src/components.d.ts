@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ButtonType,
 } from './components/button/button';
+import {
+  SelectedTab,
+} from './components/tabs/tabs';
 
 export namespace Components {
   interface NvButton {
@@ -32,8 +35,22 @@ export namespace Components {
     */
     'clickable': boolean;
   }
-  interface NvSidebar {}
-  interface NvSidebarItem {}
+  interface NvTabItem {
+    /**
+    * If true, the tab item will be in the active state
+    */
+    'selected': boolean;
+    /**
+    * Name of the tab. Used to determine which tab is currently selected.
+    */
+    'tab': string;
+  }
+  interface NvTabs {
+    /**
+    * The default selected tab
+    */
+    'defaultSelectedTab': string;
+  }
 }
 
 declare global {
@@ -51,22 +68,22 @@ declare global {
     new (): HTMLNvPanelElement;
   };
 
-  interface HTMLNvSidebarElement extends Components.NvSidebar, HTMLStencilElement {}
-  var HTMLNvSidebarElement: {
-    prototype: HTMLNvSidebarElement;
-    new (): HTMLNvSidebarElement;
+  interface HTMLNvTabItemElement extends Components.NvTabItem, HTMLStencilElement {}
+  var HTMLNvTabItemElement: {
+    prototype: HTMLNvTabItemElement;
+    new (): HTMLNvTabItemElement;
   };
 
-  interface HTMLNvSidebarItemElement extends Components.NvSidebarItem, HTMLStencilElement {}
-  var HTMLNvSidebarItemElement: {
-    prototype: HTMLNvSidebarItemElement;
-    new (): HTMLNvSidebarItemElement;
+  interface HTMLNvTabsElement extends Components.NvTabs, HTMLStencilElement {}
+  var HTMLNvTabsElement: {
+    prototype: HTMLNvTabsElement;
+    new (): HTMLNvTabsElement;
   };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
     'nv-panel': HTMLNvPanelElement;
-    'nv-sidebar': HTMLNvSidebarElement;
-    'nv-sidebar-item': HTMLNvSidebarItemElement;
+    'nv-tab-item': HTMLNvTabItemElement;
+    'nv-tabs': HTMLNvTabsElement;
   }
 }
 
@@ -91,14 +108,33 @@ declare namespace LocalJSX {
     */
     'clickable'?: boolean;
   }
-  interface NvSidebar {}
-  interface NvSidebarItem {}
+  interface NvTabItem {
+    /**
+    * Event that is emitted when the tab item is clicked
+    * @interal
+    */
+    'onTabClick'?: (event: CustomEvent<SelectedTab>) => void;
+    /**
+    * Name of the tab. Used to determine which tab is currently selected.
+    */
+    'tab': string;
+  }
+  interface NvTabs {
+    /**
+    * The default selected tab
+    */
+    'defaultSelectedTab': string;
+    /**
+    * Event that is emitted when a new tab item is selected
+    */
+    'onTabChange'?: (event: CustomEvent<string | number>) => void;
+  }
 
   interface IntrinsicElements {
     'nv-button': NvButton;
     'nv-panel': NvPanel;
-    'nv-sidebar': NvSidebar;
-    'nv-sidebar-item': NvSidebarItem;
+    'nv-tab-item': NvTabItem;
+    'nv-tabs': NvTabs;
   }
 }
 
@@ -110,8 +146,8 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
       'nv-panel': LocalJSX.NvPanel & JSXBase.HTMLAttributes<HTMLNvPanelElement>;
-      'nv-sidebar': LocalJSX.NvSidebar & JSXBase.HTMLAttributes<HTMLNvSidebarElement>;
-      'nv-sidebar-item': LocalJSX.NvSidebarItem & JSXBase.HTMLAttributes<HTMLNvSidebarItemElement>;
+      'nv-tab-item': LocalJSX.NvTabItem & JSXBase.HTMLAttributes<HTMLNvTabItemElement>;
+      'nv-tabs': LocalJSX.NvTabs & JSXBase.HTMLAttributes<HTMLNvTabsElement>;
     }
   }
 }
