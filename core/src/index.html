@@ -11,15 +11,20 @@
 
 </head>
 <body>
-  <div class="container">
-    <nv-tabs default-selected-tab="logsearch">
-      <nv-tab-item tab="dashboard">Dashboard</nv-tab-item>
-      <nv-tab-item tab="logsearch">Logsearch</nv-tab-item>
-      <nv-tab-item tab="components">Components</nv-tab-item>
-      <nv-tab-item tab="risk">Risk</nv-tab-item>
-      <nv-tab-item tab="user">User</nv-tab-item>
-    </nv-tabs>
-  </div>
+  <nv-layout>
+    <nv-layout-header>
+      <div>Test</div>
+      <nv-tabs default-selected-tab="logsearch">
+        <nv-tab-item tab="dashboard">Dashboard</nv-tab-item>
+        <nv-tab-item tab="logsearch">Logsearch</nv-tab-item>
+        <nv-tab-item tab="components">Components</nv-tab-item>
+        <nv-tab-item tab="risk">Risk</nv-tab-item>
+        <nv-tab-item tab="user">User</nv-tab-item>
+      </nv-tabs>
+    </nv-layout-header>
+    <nv-layout-content>content</nv-layout-content>
+    <nv-layout-footer>footer</nv-layout-footer>
+  </nv-layout>
 </body>
 <style>
   html {
