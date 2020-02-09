@@ -45,7 +45,9 @@ export class TabItem {
     this.tabClick.emit({
       name: this.tab,
       width: target.offsetWidth,
-      x: target.offsetLeft
+      height: target.offsetHeight,
+      x: target.offsetLeft,
+      y: target.offsetTop
     });
   }
 

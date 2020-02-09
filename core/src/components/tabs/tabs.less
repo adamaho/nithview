@@ -2,6 +2,7 @@
 
 :host {
   position: relative;
+  display: block;
 
   .nv-tabs-container {
     display: inline-flex;
@@ -14,14 +15,38 @@
 
   .nv-tab-indicator {
     position: absolute;
-    border-radius: 3px; 
-    height: 6px;
-    left: 0px;
+    border-radius: 3px;
+    height: 100%;
+    top: 0px;
     transition: all 0.2s ease-in-out;
-    .shadow-host-hover()
+    border-radius: 10px;
+    .shadow-host-active()
   }
 }
 
+:host(.vertical) {
+  .nv-tabs-container {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  .nv-tab-indicator {
+    width: 100%;
+    right: 0px;
+    top: 0px;
+    left: unset;
+  }
+}
+
+:host(.vertical) ::slotted(nv-tab-item) {
+  // background: red;
+  text-align: left;
+}
+
+:host(.horizontal) ::slotted(nv-tab-item) {
+  // background: green;
+  text-align: center;
+}
 
 
 

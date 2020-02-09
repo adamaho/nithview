@@ -12,8 +12,12 @@ import {
 export interface SelectedTab {
   name: string | number;
   width: number;
+  height: number;
   x: number;
+  y: number;
 }
+
+export type Orientation = 'vertical' | 'horizontal';
 
 /** Retrieves the selected tab item element */
 const getSelectedTab = (tabItems: HTMLNvTabItemElement[], tabName: string): HTMLNvTabItemElement => {
@@ -27,6 +31,19 @@ const getSelectedTab = (tabItems: HTMLNvTabItemElement[], tabName: string): HTML
   return tabEl;
 }
 
+const getIndicatorStyle = (orientation: Orientation, selectedTab: SelectedTab): any => {
+  if (orientation === 'vertical') {
+    return {
+      transform: `translate(0px, ${selectedTab.y}px)`,
+      height: `${selectedTab.height}px`,
+    }
+  }
+
+  return {
+    transform: `translate(${selectedTab.x}px, 0px)`,
+    width: `${selectedTab.width}px`,
+  }
+}
 
 /**
  * @slot - Collection of `nv-tab-item`'s.
@@ -43,6 +60,9 @@ export class Tabs {
 
   /** The default selected tab */
   @Prop() defaultSelectedTab!: string;
+
+  /** The orientation of the tabs */
+  @Prop() orientation: Orientation = 'horizontal';
 
   /** The tab that is currently selected */
   @State() selectedTab: SelectedTab;
@@ -77,7 +97,9 @@ export class Tabs {
       this.selectedTab = {
         name: defaultSelectTabEl.tab,
         width: defaultSelectTabEl.offsetWidth,
-        x: defaultSelectTabEl.offsetLeft
+        height: defaultSelectTabEl.offsetHeight,
+        x: defaultSelectTabEl.offsetLeft,
+        y: defaultSelectTabEl.offsetTop
       };
 
       this.tabChange.emit(defaultSelectTabEl.tab);
@@ -88,6 +110,9 @@ export class Tabs {
     return (
       <Host
         onTabClick={this.handleTabClick}
+        class={{
+          [this.orientation]: true
+        }}
       >
         <div class="nv-tabs-container">
           <slot></slot>
@@ -95,10 +120,7 @@ export class Tabs {
         {this.selectedTab &&
           <div
             class="nv-tab-indicator"
-            style={{
-              transform: `translate(${this.selectedTab.x}px, 0px)`,
-              width: `${this.selectedTab.width}px`,
-            }}
+            style={getIndicatorStyle(this.orientation, this.selectedTab)}
           />
         }
       </Host>

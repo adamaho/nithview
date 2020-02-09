@@ -13,6 +13,9 @@ import {
 import {
   SelectedTab,
 } from './components/tabs/tabs';
+import {
+  Orientation,
+} from './components/tabs/tabs';
 
 export namespace Components {
   interface NvButton {
@@ -54,6 +57,10 @@ export namespace Components {
     * The default selected tab
     */
     'defaultSelectedTab': string;
+    /**
+    * The orientation of the tabs
+    */
+    'orientation': Orientation;
   }
 }
 
@@ -164,6 +171,10 @@ declare namespace LocalJSX {
     * Event that is emitted when a new tab item is selected
     */
     'onTabChange'?: (event: CustomEvent<string | number>) => void;
+    /**
+    * The orientation of the tabs
+    */
+    'orientation'?: Orientation;
   }
 
   interface IntrinsicElements {
