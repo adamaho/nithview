@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-07T00:43:28",
+  "timestamp": "2020-02-08T20:59:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -127,6 +127,70 @@
           "docs": "Content that is placed in the button. Must be a `string`."
         }
       ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/layout/layout.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-layout",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/layout-content/layout-content.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-layout-content",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/layout-footer/layout-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-layout-footer",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/layout-header/layout-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-layout-header",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
