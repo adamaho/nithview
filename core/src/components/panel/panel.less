@@ -8,33 +8,27 @@
    * @prop --nv-panel-padding: Padding in the panel
    */
 
-  --background: var(--nv-panel-background, @default-color);
-  --border-radius: var(--nv-panel-border-radius, @border-radius);
+  // --background: var(--nv-panel-background, @default-color);
+  --border-radius: var(--nv-panel-border-radius, 6px);
   --padding: var(--nv-panel-padding, @padding-medium);
 
   display: block;
   border-radius: var(--border-radius);
   background: var(--background);
   padding: var(--padding);
-
-  .shadow-element(none);
 }
 
 :host(.clickable) {
   cursor: pointer;
-  .shadow-element(all);
 }
 
 @media(any-hover: hover) {
   :host(.clickable:hover)::before {
-    .shadow-host-hover();
   }
   :host(.clickable:focus)::before {
-    .shadow-host-focus();
   }
 }
 
 :host(.clickable:active)::before {
-  .shadow-host-active();
 }
 

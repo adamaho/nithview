@@ -15,32 +15,68 @@
    */
 
   --border-radius: var(--nv-button-border-radius, @border-radius);
-  --font-size: var(--nv-button-font-size, 14px);
-  --height: var(--nv-button-height, 46px);
+  --font-size: var(--nv-button-font-size, @font-size-small);
+  --height: var(--nv-button-height, 36px);
   --padding: var(--nv-button-padding, 0px @padding-medium);
 
-  --default-background: var(--nv-button-default-background, var(--nith-colors-default, @default-color)); 
-  --default-color: var(--nv-button-default-color, var(--nith-colors-text, @primary-text-color));
+  --primary-background: var(--nv-button-primary-background, var(--nv-colors-primary, @primary-color));
+  --primary-background-hover: var(--nv-button-primary-background-hover, var(--nv-colors-primary-hover, @primary-color-hover));
+  --primary-background-active: var(--nv-button-primary-background-active, var(--nv-colors-primary-active, @primary-color-active));
+  --primary-color: var(--nv-button-primary-color, @main-color);
 
-  --primary-background: var(--nv-button-primary-background, var(--nith-colors-primary, @primary-gradient)); 
-  --primary-color: var(--nv-button-primary-color, var(--nith-colors-text, @primary-text-color));
+  --secondary-background: var(--nv-button-secondary-background, var(--nv-colors-secondary, @secondary-color));
+  --secondary-background-hover: var(--nv-button-secondary-background-hover, var(--nv-colors-secondary-hover, @secondary-color-hover));
+  --secondary-background-active: var(--nv-button-secondary-background-active, var(--nv-colors-secondary-active, @secondary-color-active));
+  --secondary-color: var(--nv-button-secondary-color, @main-color);
 
-  display: inline-block;
+  --tertiary-background: var(--nv-button-tertiary-background, var(--nv-colors-tertiary, @tertiary-color));
+  --tertiary-background-hover: var(--nv-button-tertiary-background-hover, var(--nv-colors-tertiary-hover, @tertiary-color-hover));
+  --tertiary-background-active: var(--nv-button-tertiary-background-active, var(--nv-colors-tertiary-active, @tertiary-color-active));
+  --tertiary-color: var(--nv-button-tertiary-color, @main-color);
+
+  --ghost-background: var(--nv-button-ghost-background, var(--nv-colors-ghost, @ghost-color));
+  --ghost-background-hover: var(--nv-button-ghost-background-hover, var(--nv-colors-ghost-hover, @ghost-color-hover));
+  --ghost-background-active: var(--nv-button-ghost-background-active, var(--nv-colors-ghost-active, @ghost-color-active));
+  --ghost-color: var(--nv-button-ghost-color, @primary-text-color);
+
+  display: block;
 }
 
 /* button primary
 -------------------------------------- */
 :host(.nv-button-primary) {
   --background: var(--primary-background);
+  --background-hover: var(--primary-background-hover);
+  --background-active: var(--primary-background-active);
   --color: var(--primary-color);
 };
 
-/* button default
+/* button secondary
 -------------------------------------- */
-:host(.nv-button-default) {
-  --background: var(--default-background);
-  --color: var(--default-color);
-}
+:host(.nv-button-secondary) {
+  --background: var(--secondary-background);
+  --background-hover: var(--secondary-background-hover);
+  --background-active: var(--secondary-background-active);
+  --color: var(--secondary-color);
+};
+
+/* button tertiary
+-------------------------------------- */
+:host(.nv-button-tertiary) {
+  --background: var(--tertiary-background);
+  --background-hover: var(--tertiary-background-hover);
+  --background-active: var(--tertiary-background-active);
+  --color: var(--tertiary-color);
+};
+
+/* button ghost
+-------------------------------------- */
+:host(.nv-button-ghost) {
+  --background: var(--ghost-background);
+  --background-hover: var(--ghost-background-hover);
+  --background-active: var(--ghost-background-active);
+  --color: var(--ghost-color);
+};
 
 /* button
 -------------------------------------- */
@@ -56,9 +92,18 @@ button {
   color: var(--color);
   cursor: pointer;
 
-  margin: 0;
+  transition: background-color 0.2s ease-in-out;
 
-  .shadow-element(all);
+  margin: 0;
+}
+
+button:focus,
+button:hover {
+  background: var(--background-hover);
+}
+
+button:active {
+  background: var(--background-active);
 }
 
 /* button disabled

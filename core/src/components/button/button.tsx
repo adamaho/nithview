@@ -5,7 +5,7 @@ import {
   h
 } from '@stencil/core';
 
-export type ButtonType = 'primary' | 'default';
+export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 
 /**
  * @slot - Content that is placed in the button. Must be a `string`.
@@ -18,7 +18,7 @@ export type ButtonType = 'primary' | 'default';
 export class Button {
 
   /** The type of the button */
-  @Prop() type: ButtonType = 'default';
+  @Prop() type: ButtonType = 'primary';
 
   /** If true, the button will be disabled */
   @Prop() disabled: boolean = false;
