@@ -10,9 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ButtonType,
 } from './components/button/button';
-import {
-  SelectedTab,
-} from './components/tabs/tabs';
 
 export namespace Components {
   interface NvButton {
@@ -33,28 +30,6 @@ export namespace Components {
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
   interface NvLayoutHeader {}
-  interface NvPanel {
-    /**
-    * If true, active, hover, focus styles will be applied
-    */
-    'clickable': boolean;
-  }
-  interface NvTabItem {
-    /**
-    * If true, the tab item will be in the active state
-    */
-    'selected': boolean;
-    /**
-    * Name of the tab. Used to determine which tab is currently selected.
-    */
-    'tab': string;
-  }
-  interface NvTabs {
-    /**
-    * The default selected tab
-    */
-    'defaultSelectedTab': string;
-  }
 }
 
 declare global {
@@ -89,33 +64,12 @@ declare global {
     prototype: HTMLNvLayoutHeaderElement;
     new (): HTMLNvLayoutHeaderElement;
   };
-
-  interface HTMLNvPanelElement extends Components.NvPanel, HTMLStencilElement {}
-  var HTMLNvPanelElement: {
-    prototype: HTMLNvPanelElement;
-    new (): HTMLNvPanelElement;
-  };
-
-  interface HTMLNvTabItemElement extends Components.NvTabItem, HTMLStencilElement {}
-  var HTMLNvTabItemElement: {
-    prototype: HTMLNvTabItemElement;
-    new (): HTMLNvTabItemElement;
-  };
-
-  interface HTMLNvTabsElement extends Components.NvTabs, HTMLStencilElement {}
-  var HTMLNvTabsElement: {
-    prototype: HTMLNvTabsElement;
-    new (): HTMLNvTabsElement;
-  };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
     'nv-layout': HTMLNvLayoutElement;
     'nv-layout-content': HTMLNvLayoutContentElement;
     'nv-layout-footer': HTMLNvLayoutFooterElement;
     'nv-layout-header': HTMLNvLayoutHeaderElement;
-    'nv-panel': HTMLNvPanelElement;
-    'nv-tab-item': HTMLNvTabItemElement;
-    'nv-tabs': HTMLNvTabsElement;
   }
 }
 
@@ -138,33 +92,6 @@ declare namespace LocalJSX {
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
   interface NvLayoutHeader {}
-  interface NvPanel {
-    /**
-    * If true, active, hover, focus styles will be applied
-    */
-    'clickable'?: boolean;
-  }
-  interface NvTabItem {
-    /**
-    * Event that is emitted when the tab item is clicked
-    * @interal
-    */
-    'onTabClick'?: (event: CustomEvent<SelectedTab>) => void;
-    /**
-    * Name of the tab. Used to determine which tab is currently selected.
-    */
-    'tab': string;
-  }
-  interface NvTabs {
-    /**
-    * The default selected tab
-    */
-    'defaultSelectedTab': string;
-    /**
-    * Event that is emitted when a new tab item is selected
-    */
-    'onTabChange'?: (event: CustomEvent<string | number>) => void;
-  }
 
   interface IntrinsicElements {
     'nv-button': NvButton;
@@ -172,9 +99,6 @@ declare namespace LocalJSX {
     'nv-layout-content': NvLayoutContent;
     'nv-layout-footer': NvLayoutFooter;
     'nv-layout-header': NvLayoutHeader;
-    'nv-panel': NvPanel;
-    'nv-tab-item': NvTabItem;
-    'nv-tabs': NvTabs;
   }
 }
 
@@ -189,9 +113,6 @@ declare module "@stencil/core" {
       'nv-layout-content': LocalJSX.NvLayoutContent & JSXBase.HTMLAttributes<HTMLNvLayoutContentElement>;
       'nv-layout-footer': LocalJSX.NvLayoutFooter & JSXBase.HTMLAttributes<HTMLNvLayoutFooterElement>;
       'nv-layout-header': LocalJSX.NvLayoutHeader & JSXBase.HTMLAttributes<HTMLNvLayoutHeaderElement>;
-      'nv-panel': LocalJSX.NvPanel & JSXBase.HTMLAttributes<HTMLNvPanelElement>;
-      'nv-tab-item': LocalJSX.NvTabItem & JSXBase.HTMLAttributes<HTMLNvTabItemElement>;
-      'nv-tabs': LocalJSX.NvTabs & JSXBase.HTMLAttributes<HTMLNvTabsElement>;
     }
   }
 }

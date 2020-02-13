@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                    | Type                     | Default     |
-| ---------- | ---------- | ---------------------------------------------- | ------------------------ | ----------- |
-| `disabled` | `disabled` | If true, the button will be disabled           | `boolean`                | `false`     |
-| `loading`  | `loading`  | If true, the button will be in a loading state | `boolean`                | `false`     |
-| `type`     | `type`     | The type of the button                         | `"default" \| "primary"` | `'default'` |
+| Property   | Attribute  | Description                                    | Type                                                | Default     |
+| ---------- | ---------- | ---------------------------------------------- | --------------------------------------------------- | ----------- |
+| `disabled` | `disabled` | If true, the button will be disabled           | `boolean`                                           | `false`     |
+| `loading`  | `loading`  | If true, the button will be in a loading state | `boolean`                                           | `false`     |
+| `type`     | `type`     | The type of the button                         | `"ghost" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
 
 ## Slots

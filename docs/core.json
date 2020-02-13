@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-08T20:59:40",
+  "timestamp": "2020-02-13T15:24:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -56,20 +56,28 @@
         },
         {
           "name": "type",
-          "type": "\"default\" | \"primary\"",
+          "type": "\"ghost\" | \"primary\" | \"secondary\" | \"tertiary\"",
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
           "docs": "The type of the button",
           "docsTags": [],
-          "default": "'default'",
+          "default": "'primary'",
           "values": [
             {
-              "value": "default",
+              "value": "ghost",
               "type": "string"
             },
             {
               "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
               "type": "string"
             }
           ],
@@ -135,6 +143,7 @@
       "filePath": "src/components/layout/layout.tsx",
       "encapsulation": "shadow",
       "tag": "nv-layout",
+      "readme": "# nv-layout\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -151,6 +160,7 @@
       "filePath": "src/components/layout-content/layout-content.tsx",
       "encapsulation": "shadow",
       "tag": "nv-layout-content",
+      "readme": "# nv-layout-content\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -167,6 +177,7 @@
       "filePath": "src/components/layout-footer/layout-footer.tsx",
       "encapsulation": "shadow",
       "tag": "nv-layout-footer",
+      "readme": "# nv-layout-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -183,6 +194,7 @@
       "filePath": "src/components/layout-header/layout-header.tsx",
       "encapsulation": "shadow",
       "tag": "nv-layout-header",
+      "readme": "# nv-layout-header\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -191,208 +203,6 @@
       "events": [],
       "styles": [],
       "slots": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src/components/panel/panel.tsx",
-      "encapsulation": "shadow",
-      "tag": "nv-panel",
-      "readme": "# nv-panel\n\n\n",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "- Content that is placed in the panel",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "clickable",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "clickable",
-          "reflectToAttr": false,
-          "docs": "If true, active, hover, focus styles will be applied",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "styles": [
-        {
-          "name": "--nv-panel-background",
-          "annotation": "prop",
-          "docs": "Background of the panel"
-        },
-        {
-          "name": "--nv-panel-border-radius",
-          "annotation": "prop",
-          "docs": "Border radius of the panel"
-        },
-        {
-          "name": "--nv-panel-padding",
-          "annotation": "prop",
-          "docs": "Padding in the panel"
-        }
-      ],
-      "slots": [
-        {
-          "name": "",
-          "docs": "Content that is placed in the panel"
-        }
-      ],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src/components/tab-item/tab-item.tsx",
-      "encapsulation": "shadow",
-      "tag": "nv-tab-item",
-      "readme": "# nv-tab-item\n\n\n",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "- Content that is placed in the in the tab item. Must be a `string`.",
-          "name": "slot"
-        },
-        {
-          "text": "nv-tab-icon - Icon to show to the left of the tab item.",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "tab",
-          "type": "string",
-          "mutable": false,
-          "attr": "tab",
-          "reflectToAttr": false,
-          "docs": "Name of the tab. Used to determine which tab is currently selected.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "tabClick",
-          "detail": "SelectedTab",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Event that is emitted when the tab item is clicked",
-          "docsTags": [
-            {
-              "name": "interal"
-            }
-          ]
-        }
-      ],
-      "styles": [
-        {
-          "name": "--nv-tab-item-border-radius",
-          "annotation": "prop",
-          "docs": "Border radius of the tab-item"
-        },
-        {
-          "name": "--nv-tab-item-height",
-          "annotation": "prop",
-          "docs": "Background of the tab-item"
-        },
-        {
-          "name": "--nv-tab-item-margin",
-          "annotation": "prop",
-          "docs": "Margin of the tab-item"
-        },
-        {
-          "name": "--nv-tab-item-padding",
-          "annotation": "prop",
-          "docs": "Padding of the tab-item"
-        }
-      ],
-      "slots": [
-        {
-          "name": "",
-          "docs": "Content that is placed in the in the tab item. Must be a `string`."
-        },
-        {
-          "name": "nv-tab-icon",
-          "docs": "Icon to show to the left of the tab item."
-        }
-      ],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src/components/tabs/tabs.tsx",
-      "encapsulation": "shadow",
-      "tag": "nv-tabs",
-      "readme": "# nv-tabs\n\n\n",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "- Collection of `nv-tab-item`'s.",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "defaultSelectedTab",
-          "type": "string",
-          "mutable": false,
-          "attr": "default-selected-tab",
-          "reflectToAttr": false,
-          "docs": "The default selected tab",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "tabChange",
-          "detail": "number | string",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Event that is emitted when a new tab item is selected",
-          "docsTags": []
-        }
-      ],
-      "styles": [],
-      "slots": [
-        {
-          "name": "",
-          "docs": "Collection of `nv-tab-item`'s."
-        }
-      ],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}

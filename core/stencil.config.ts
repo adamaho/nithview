@@ -10,8 +10,6 @@ export const config: Config = {
   namespace: 'nithview',
   bundles: [
     { components: ['nv-button'] },
-    { components: ['nv-panel'] },
-    { components: ['nv-tabs', 'nv-tab-item'] },
     { components: ['nv-layout', 'nv-layout-header', 'nv-layout-content', 'nv-layout-footer'] }
   ],
   outputTargets: [
