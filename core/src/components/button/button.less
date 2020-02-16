@@ -19,24 +19,24 @@
   --height: var(--nv-button-height, 36px);
   --padding: var(--nv-button-padding, 0px @padding-medium);
 
-  --primary-background: var(--nv-button-primary-background, var(--nv-colors-primary, @primary-color));
-  --primary-background-hover: var(--nv-button-primary-background-hover, var(--nv-colors-primary-hover, @primary-color-hover));
-  --primary-background-active: var(--nv-button-primary-background-active, var(--nv-colors-primary-active, @primary-color-active));
+  --primary-background: var(--nv-button-primary-background, @primary-color);
+  --primary-background-hover: var(--nv-button-primary-background-hover, @primary-color-hover);
+  --primary-background-active: var(--nv-button-primary-background-active, @primary-color-active);
   --primary-color: var(--nv-button-primary-color, @main-color);
 
-  --secondary-background: var(--nv-button-secondary-background, var(--nv-colors-secondary, @secondary-color));
-  --secondary-background-hover: var(--nv-button-secondary-background-hover, var(--nv-colors-secondary-hover, @secondary-color-hover));
-  --secondary-background-active: var(--nv-button-secondary-background-active, var(--nv-colors-secondary-active, @secondary-color-active));
+  --secondary-background: var(--nv-button-secondary-background, @secondary-color);
+  --secondary-background-hover: var(--nv-button-secondary-background-hover, @secondary-color-hover);
+  --secondary-background-active: var(--nv-button-secondary-background-active, @secondary-color-active);
   --secondary-color: var(--nv-button-secondary-color, @main-color);
 
-  --tertiary-background: var(--nv-button-tertiary-background, var(--nv-colors-tertiary, @tertiary-color));
-  --tertiary-background-hover: var(--nv-button-tertiary-background-hover, var(--nv-colors-tertiary-hover, @tertiary-color-hover));
-  --tertiary-background-active: var(--nv-button-tertiary-background-active, var(--nv-colors-tertiary-active, @tertiary-color-active));
+  --tertiary-background: var(--nv-button-tertiary-background, @tertiary-color);
+  --tertiary-background-hover: var(--nv-button-tertiary-background-hover, @tertiary-color-hover);
+  --tertiary-background-active: var(--nv-button-tertiary-background-active, @tertiary-color-active);
   --tertiary-color: var(--nv-button-tertiary-color, @main-color);
 
-  --ghost-background: var(--nv-button-ghost-background, var(--nv-colors-ghost, @ghost-color));
-  --ghost-background-hover: var(--nv-button-ghost-background-hover, var(--nv-colors-ghost-hover, @ghost-color-hover));
-  --ghost-background-active: var(--nv-button-ghost-background-active, var(--nv-colors-ghost-active, @ghost-color-active));
+  --ghost-background: var(--nv-button-ghost-background, @ghost-color);
+  --ghost-background-hover: var(--nv-button-ghost-background-hover, @ghost-color-hover);
+  --ghost-background-active: var(--nv-button-ghost-background-active, @ghost-color-active);
   --ghost-color: var(--nv-button-ghost-color, @primary-text-color);
 
   display: block;
@@ -92,7 +92,7 @@ button {
   color: var(--color);
   cursor: pointer;
 
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color @transition-speed-very-fast ease-in-out;
 
   margin: 0;
 }

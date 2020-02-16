@@ -26,6 +26,12 @@ export namespace Components {
     */
     'type': ButtonType;
   }
+  interface NvInput {
+    /**
+    * Placeholder for the input
+    */
+    'placeholder': string;
+  }
   interface NvLayout {}
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
@@ -39,6 +45,12 @@ declare global {
   var HTMLNvButtonElement: {
     prototype: HTMLNvButtonElement;
     new (): HTMLNvButtonElement;
+  };
+
+  interface HTMLNvInputElement extends Components.NvInput, HTMLStencilElement {}
+  var HTMLNvInputElement: {
+    prototype: HTMLNvInputElement;
+    new (): HTMLNvInputElement;
   };
 
   interface HTMLNvLayoutElement extends Components.NvLayout, HTMLStencilElement {}
@@ -66,6 +78,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'nv-button': HTMLNvButtonElement;
+    'nv-input': HTMLNvInputElement;
     'nv-layout': HTMLNvLayoutElement;
     'nv-layout-content': HTMLNvLayoutContentElement;
     'nv-layout-footer': HTMLNvLayoutFooterElement;
@@ -88,6 +101,12 @@ declare namespace LocalJSX {
     */
     'type'?: ButtonType;
   }
+  interface NvInput {
+    /**
+    * Placeholder for the input
+    */
+    'placeholder'?: string;
+  }
   interface NvLayout {}
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
@@ -95,6 +114,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'nv-button': NvButton;
+    'nv-input': NvInput;
     'nv-layout': NvLayout;
     'nv-layout-content': NvLayoutContent;
     'nv-layout-footer': NvLayoutFooter;
@@ -109,6 +129,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
+      'nv-input': LocalJSX.NvInput & JSXBase.HTMLAttributes<HTMLNvInputElement>;
       'nv-layout': LocalJSX.NvLayout & JSXBase.HTMLAttributes<HTMLNvLayoutElement>;
       'nv-layout-content': LocalJSX.NvLayoutContent & JSXBase.HTMLAttributes<HTMLNvLayoutContentElement>;
       'nv-layout-footer': LocalJSX.NvLayoutFooter & JSXBase.HTMLAttributes<HTMLNvLayoutFooterElement>;

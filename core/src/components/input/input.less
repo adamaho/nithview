@@ -1,0 +1,39 @@
+@import '../../less/global.less';
+
+:host {
+
+  --background: var(--nv-input-background, transparent);
+  --border: var(--nv-input-border, 1px solid @border-color);
+  --border-radius: var(--nv-input-border-radius, var(--nv-border-radius, @border-radius));
+
+  --color: var(--nv-input-color, var(--nv-secondary-text-color, @secondary-text-color));
+
+  --font-family: var(--nv-input-font-family, inherit);
+
+  --height: var(--nv-input-height, 36px);
+
+  --padding: var(--nv-input-padding, 0 12px);
+
+  display: block;
+}
+
+input {
+  background: var(--background);
+
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  color: var(--color);
+
+  font-family: var(--font-family);
+
+  height: var(--height);
+
+  padding: var(--padding);
+
+  transition: border @transition-speed-very-fast ease-in-out;
+}
+
+input:focus {
+  border: 1px solid var(--nv-primary-color, @primary-color);
+}

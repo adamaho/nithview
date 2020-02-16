@@ -1,41 +1,46 @@
 
 /* colors
 ------------------------ */
-@primary-color: #EEBBC3;
-@primary-color-hover: #D6A8AE;
-@primary-color-active: #BE959B;
-@secondary-color: #FFFFFE;
-@secondary-color-hover: #E5E5E4;
-@secondary-color-active: #CCCCCB;
-@tertiary-color: #B8C1EC;
-@tertiary-color-hover: #A5ADD4;
-@tertiary-color-active: #939ABC;
-@ghost-color: transparent;
-@ghost-color-hover: fade(#FFFFFE, 5%);
-@ghost-color-active: fade(#FFFFFE, 15%);
-@main-color: #232946;
+@primary-color: var(--nv-primary-color, #EEBBC3);
+@primary-color-hover: var(--nv-primary-color-hover, #D6A8AE);
+@primary-color-active: var(--nv-primary-color-active, #BE959B);
+@secondary-color: var(--nv-secondary-color, #FFFFFE);
+@secondary-color-hover: var(--nv-secondary-color, #E5E5E4);
+@secondary-color-active: var(--nv-secondary-color-active, #CCCCCB);
+@tertiary-color: var(--nv-tertiary-color, #B8C1EC);
+@tertiary-color-hover: var(--nv-tertiary-color-hover-, #A5ADD4);
+@tertiary-color-active: var(--nv-tertiary-color-active, #939ABC);
+@ghost-color: var(--nv-ghost-color, transparent);
+@ghost-color-hover: var(--nv-ghost-color-hover, fade(#FFFFFE, 5%));
+@ghost-color-active: var(--nv-ghost-color-active, fade(#FFFFFE, 15%));
+@main-color: var(--nv-main-color, #232946);
+@border-color: var(--nv-border-color, #121629);
 
 /* text colors
 ------------------------ */
-@primary-text-color: #FFFFFE;
-@secondary-text-color: #B8C1EC;
+@primary-text-color: var(--nv-primary-text-color, #FFFFFE);
+@secondary-text-color: var(--nv-secondary-text-color, #B8C1EC);
 
 /* border
 ------------------------ */
-@border-radius: 6px;
+@border-radius: var(--nv-border-radius, 6px);
 
 /* font sizes
 ------------------------ */
-@font-size-extra-small: 12px;
-@font-size-small: 14px;
-@font-size-medium: 18px;
-@font-size-large: 24px;
-@font-size-extra-large: 36px;
+@font-size-extra-small: var(--nv-font-size-extra-small, 12px);
+@font-size-small: var(--nv-font-size-small, 14px);
+@font-size-medium: var(--nv-font-size-medium, 18px);
+@font-size-large: var(--nv-font-size-large, 24px);
+@font-size-extra-large: var(--nv-font-size-extra-large, 36px);
 
 /* padding
 ------------------------ */
-@padding-extra-small: 4px;
-@padding-small: 8px;
-@padding-medium: 16px;
-@padding-large: 24px;
-@padding-huge: 32px;
+@padding-extra-small: var(--nv-padding-extra-small, 4px);
+@padding-small: var(--nv-padding-small, 8px);
+@padding-medium: var(--nv-padding-extra-small, 16px);
+@padding-large: var(--nv-padding-large, 24px);
+@padding-huge: var(--nv-padding-huge, 32px);
+
+/* transitions
+------------------------ */
+@transition-speed-very-fast: var(--nv-transition-speed-very-fast, 0.15s);
