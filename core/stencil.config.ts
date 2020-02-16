@@ -19,7 +19,6 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
-      footer: '* NithView *',
       strict: true
     },
     {
