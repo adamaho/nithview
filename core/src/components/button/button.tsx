@@ -12,7 +12,7 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost';
  */
 @Component({
   tag: 'nv-button',
-  styleUrl: './button.less',
+  styleUrl: 'button.less',
   shadow: true
 })
 export class Button {
