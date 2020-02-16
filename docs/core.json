@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-16T02:40:38",
+  "timestamp": "2020-02-16T22:59:50",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -135,6 +135,39 @@
           "docs": "Content that is placed in the button. Must be a `string`."
         }
       ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/input/input.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-input",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder for the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
