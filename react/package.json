@@ -1,6 +1,6 @@
 {
   "name": "@nithview/react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React abstraction of NithView Web Components",
   "main": "dist/nithview.cjs.js",
   "module": "dist/nithview.es.js",
@@ -28,6 +28,6 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@nithview/core": "^1.0.9"
+    "@nithview/core": "^1.0.10"
   }
 }

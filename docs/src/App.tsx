@@ -3,22 +3,25 @@ import * as React from 'react';
 import './App.css';
 
 import {
-  Button
+  Button,
+  Layout,
+  Input
 } from '@nithview/react';
 
 const App = () => {
   return (
-    <nv-layout style={{ background: "black" }}>
-      <nv-layout-header>
+    <Layout>
+      <Layout.Header>
         <h1>NithView</h1>
-      </nv-layout-header>
-      <nv-layout-content>
-        <Button type="ghost" onClick={() => console.log('asdfasdfas')}>aasdfasdf</Button>
-      </nv-layout-content>
-      <nv-layout-footer>
+      </Layout.Header>
+      <Layout.Content>
+        <Input placeholder="hello" onChange={(e) => console.log(e.target)}>asdasdasd</Input>
+        <Button type="tertiary" onClick={() => console.log('asdfasdfas')}>aasdfasdf</Button>
+      </Layout.Content>
+      <Layout.Footer>
         footer
-      </nv-layout-footer>
-    </nv-layout>
+      </Layout.Footer>
+    </Layout>
   );
 }
 

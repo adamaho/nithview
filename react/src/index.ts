@@ -1,11 +1,3 @@
-export {
-  Button
-} from './components/button';
-
-export {
-  useCustomEvent
-} from './hooks';
-
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import {
@@ -28,3 +20,22 @@ declare global {
     interface IntrinsicElements extends StencilToReact { }
   }
 }
+
+export {
+  Button,
+  ButtonProps
+} from './components/button/button';
+
+export {
+  Layout,
+  LayoutComponent
+} from './components/layout/layout';
+
+export {
+  Input,
+  InputProps
+} from './components/input/input';
+
+export {
+  useCustomEvent
+} from './hooks';
