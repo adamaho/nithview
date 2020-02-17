@@ -1,0 +1,33 @@
+{
+  "name": "@nithview/react",
+  "version": "0.0.2",
+  "description": "React abstraction of NithView Web Components",
+  "main": "dist/nithview.cjs.js",
+  "module": "dist/nithview.es.js",
+  "types": "dist/nithview.d.ts",
+  "scripts": {
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:ts": "tsc -p ./tsconfig.rollup.json --emitDeclarationOnly --removeComments false && api-extractor run --local",
+    "build": "rm -rf dist/ && rm -rf types/ && npm run rollup && npm run build:ts",
+    "rollup": "rollup -c"
+  },
+  "author": "adamaho",
+  "license": "ISC",
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.7.8",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@types/react": "^16.9.19",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.31.1",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.7.5"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "dependencies": {
+    "@nithview/core": "^1.0.9"
+  }
+}

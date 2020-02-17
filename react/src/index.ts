@@ -1,6 +1,16 @@
-/* eslint-disable */
-import { defineCustomElements, JSX as LocalJSX, applyPolyfills } from '@nithview/core/loader';
+export {
+  Button
+} from './components/button';
+
+export {
+  useCustomEvent
+} from './hooks';
+
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
+
+import {
+  JSX as LocalJSX
+} from '@nithview/core/loader';
 
 type StencilProps<T> = {
   [P in keyof T]?: Omit<T[P], 'ref'> | HTMLAttributes<T>;
@@ -18,7 +28,3 @@ declare global {
     interface IntrinsicElements extends StencilToReact { }
   }
 }
-
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
