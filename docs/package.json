@@ -40,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "@nithview/core": "1.0.11",
+    "@nithview/core": "1.0.12",
     "source-map-explorer": "2.2.2"
   }
 }

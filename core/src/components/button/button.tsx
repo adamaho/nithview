@@ -1,8 +1,10 @@
 import {
+  EventEmitter,
   Component,
+  Event,
   Prop,
   Host,
-  h
+  h,
 } from '@stencil/core';
 
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost';
@@ -26,6 +28,14 @@ export class Button {
   /** If true, the button will be in a loading state */
   @Prop() loading: boolean = false;
 
+  /** Event to handle button click */
+  @Event() buttonClick: EventEmitter;
+
+  /** Click Handler for button */
+  onClick = (e) => {
+    this.buttonClick.emit(e);
+  }
+
   render() {
     return (
       <Host
@@ -34,7 +44,7 @@ export class Button {
           'nv-button-loading': this.loading
         }}
       >
-        <button disabled={this.disabled || this.loading}>
+        <button onClick={this.onClick} disabled={this.disabled || this.loading}>
           <slot></slot>
         </button>  
       </Host>

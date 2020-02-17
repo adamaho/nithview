@@ -14,6 +14,13 @@
 | `type`     | `type`     | The type of the button                         | `"ghost" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
 
+## Events
+
+| Event         | Description                  | Type               |
+| ------------- | ---------------------------- | ------------------ |
+| `buttonClick` | Event to handle button click | `CustomEvent<any>` |
+
+
 ## Slots
 
 | Slot | Description                                               |

@@ -28,6 +28,6 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@nithview/core": "1.0.11"
+    "@nithview/core": "1.0.13"
   }
 }

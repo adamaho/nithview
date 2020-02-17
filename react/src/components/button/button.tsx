@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+import {
+  useCustomEvent
+} from '../../hooks';
+
 export interface ButtonProps {
   type: 'primary' | 'secondary' | 'tertiary' | 'ghost';
   onClick: React.EventHandler<React.MouseEvent>;
@@ -9,11 +13,17 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   onClick,
   type
-}) => (
-  <nv-button
-    type={type}
-    onClick={onClick}
-  >
-    {children}
-  </nv-button>
-);
+}) => {
+  const buttonRef = React.useRef<HTMLNvButtonElement>(null);
+
+  useCustomEvent('buttonClick', buttonRef, onClick);
+
+  return (
+    <nv-button
+      ref={buttonRef}
+      type={type}
+    >
+      {children}
+    </nv-button>
+  )
+};

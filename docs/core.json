@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-17T03:05:31",
+  "timestamp": "2020-02-17T03:55:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -86,7 +86,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "buttonClick",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event to handle button click",
+          "docsTags": []
+        }
+      ],
       "styles": [
         {
           "name": "--nv-button-border-radius",

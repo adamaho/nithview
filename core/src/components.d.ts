@@ -97,6 +97,10 @@ declare namespace LocalJSX {
     */
     'loading'?: boolean;
     /**
+    * Event to handle button click
+    */
+    'onButtonClick'?: (event: CustomEvent<any>) => void;
+    /**
     * The type of the button
     */
     'type'?: ButtonType;
