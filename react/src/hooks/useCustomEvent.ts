@@ -7,6 +7,8 @@ export const useCustomEvent = (
 ) => {
   return React.useEffect(() => {
     const element = ref;
+
+    console.log(element);
     function handleCustomEvent(e: Event) {
       callback(e);
     }

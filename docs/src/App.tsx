@@ -15,6 +15,7 @@ const App = () => {
         <h1>NithView</h1>
       </Layout.Header>
       <Layout.Content>
+        <nv-button>asdfasdf</nv-button>
         <Input placeholder="hello" onChange={(e) => console.log(e.target)} />
         <Button type="tertiary" onClick={() => console.log('asdfasdfas')}>aasdfasdf</Button>
       </Layout.Content>
