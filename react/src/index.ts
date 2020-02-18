@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { defineCustomElements, JSX as LocalJSX } from '@nithview/core/loader';
+import { JSX as LocalJSX } from '@nithview/core/loader';
 
 type StencilProps<T> = {
   [P in keyof T]?: Omit<T[P], 'ref'> | HTMLAttributes<T>;
@@ -18,8 +18,6 @@ declare global {
   }
 }
 
-defineCustomElements(window);
-
 export {
   Button,
   ButtonProps
@@ -34,6 +32,10 @@ export {
   Input,
   InputProps
 } from './components/input/input';
+
+export {
+  Typography
+} from './components/typography/Typography';
 
 export {
   useCustomEvent

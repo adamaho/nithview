@@ -1,3 +1,17 @@
-import * as React from 'react';
+import {
+  Body
+} from './Body';
 
-export const Typography: React.FunctionComponent = () => {}
+import {
+  Subtitle
+} from './Subtitle';
+
+import {
+  Title
+} from './Title';
+
+export const Typography = {
+  Body,
+  Subtitle,
+  Title
+};

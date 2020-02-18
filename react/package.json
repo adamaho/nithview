@@ -1,6 +1,6 @@
 {
   "name": "@nithview/react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React abstraction of NithView Web Components",
   "main": "dist/nithview.cjs.js",
   "module": "dist/nithview.es.js",
@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.7.8",
-    "@nithview/core": "1.0.18",
+    "@nithview/core": "1.0.19",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@types/react": "^16.9.19",
     "react": "^16.12.0",
