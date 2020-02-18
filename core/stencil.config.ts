@@ -11,7 +11,8 @@ export const config: Config = {
   bundles: [
     { components: ['nv-button'] },
     { components: ['nv-input'] },
-    { components: ['nv-layout', 'nv-layout-header', 'nv-layout-content', 'nv-layout-footer'] }
+    { components: ['nv-layout', 'nv-layout-header', 'nv-layout-content', 'nv-layout-footer'] },
+    { components: ['nv-title', 'nv-subtitle', 'nv-body'] },
   ],
   outputTargets: [
     {

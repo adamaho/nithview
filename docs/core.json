@@ -1,11 +1,49 @@
 {
-  "timestamp": "2020-02-18T01:35:05",
+  "timestamp": "2020-02-18T02:51:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
     "typescriptVersion": "3.7.5"
   },
   "components": [
+    {
+      "filePath": "src/components/body/body.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-body",
+      "readme": "# nv-body\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-body-color Color of the body",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-body-font-family Font family of the body",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-body-font-size Font size of the body",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-body-font-weight Font size of the body",
+          "annotation": "prop",
+          "docs": ""
+        }
+      ],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
     {
       "filePath": "src/components/button/button.tsx",
       "encapsulation": "shadow",
@@ -272,6 +310,82 @@
       "methods": [],
       "events": [],
       "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/subtitle/subtitle.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-subtitle",
+      "readme": "# nv-subtitle\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-subtitle-color Color of the subtitle",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-subtitle-font-family Font family of the subtitle",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-subtitle-font-size Font size of the subtitle",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-subtitle-font-weight Font size of the subtitle",
+          "annotation": "prop",
+          "docs": ""
+        }
+      ],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/title/title.tsx",
+      "encapsulation": "shadow",
+      "tag": "nv-title",
+      "readme": "# nv-title\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--nv-title-color Color of the title",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-title-font-family Font family of the title",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-title-font-size Font size of the title",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--nv-title-font-weight Font size of the title",
+          "annotation": "prop",
+          "docs": ""
+        }
+      ],
       "slots": [],
       "dependents": [],
       "dependencies": [],
