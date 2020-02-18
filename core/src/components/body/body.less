@@ -1,0 +1,26 @@
+@import '../../less/global.less';
+
+:host {
+  /**
+   * @prop --nv-body-font-family Font family of the body
+   * @prop --nv-body-font-size Font size of the body
+   * @prop --nv-body-font-weight Font size of the body
+   * @prop --nv-body-color Color of the body
+   */
+   
+   --font-family: var(--nv-body-font-family, @font-family);
+   --font-size: var(--nv-body-font-size, @font-size-extra-small);
+   --font-weight: var(--nv-body-font-weight,  400);
+   --color: var(--nv-body-color, @secondary-text-color);
+   
+  display: inline;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+}
+
+:host {
+  display: block;
+}

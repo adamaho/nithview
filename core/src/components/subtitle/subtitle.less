@@ -1,0 +1,23 @@
+@import '../../less/global.less';
+
+:host {
+  /**
+   * @prop --nv-subtitle-font-family Font family of the subtitle
+   * @prop --nv-subtitle-font-size Font size of the subtitle
+   * @prop --nv-subtitle-font-weight Font size of the subtitle
+   * @prop --nv-subtitle-color Color of the subtitle
+   */
+   
+   --font-family: var(--nv-subtitle-font-family, @font-family);
+   --font-size: var(--nv-subtitle-font-size, @font-size-large);
+   --font-weight: var(--nv-subtitle-font-weight,  500);
+   --color: var(--nv-subtitle-color, @primary-text-color);
+   
+  display: inline;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+}
+

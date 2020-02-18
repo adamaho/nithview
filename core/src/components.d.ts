@@ -12,6 +12,7 @@ import {
 } from './components/button/button';
 
 export namespace Components {
+  interface NvBody {}
   interface NvButton {
     /**
     * If true, the button will be disabled
@@ -40,10 +41,18 @@ export namespace Components {
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
   interface NvLayoutHeader {}
+  interface NvSubtitle {}
+  interface NvTitle {}
 }
 
 declare global {
 
+
+  interface HTMLNvBodyElement extends Components.NvBody, HTMLStencilElement {}
+  var HTMLNvBodyElement: {
+    prototype: HTMLNvBodyElement;
+    new (): HTMLNvBodyElement;
+  };
 
   interface HTMLNvButtonElement extends Components.NvButton, HTMLStencilElement {}
   var HTMLNvButtonElement: {
@@ -80,17 +89,33 @@ declare global {
     prototype: HTMLNvLayoutHeaderElement;
     new (): HTMLNvLayoutHeaderElement;
   };
+
+  interface HTMLNvSubtitleElement extends Components.NvSubtitle, HTMLStencilElement {}
+  var HTMLNvSubtitleElement: {
+    prototype: HTMLNvSubtitleElement;
+    new (): HTMLNvSubtitleElement;
+  };
+
+  interface HTMLNvTitleElement extends Components.NvTitle, HTMLStencilElement {}
+  var HTMLNvTitleElement: {
+    prototype: HTMLNvTitleElement;
+    new (): HTMLNvTitleElement;
+  };
   interface HTMLElementTagNameMap {
+    'nv-body': HTMLNvBodyElement;
     'nv-button': HTMLNvButtonElement;
     'nv-input': HTMLNvInputElement;
     'nv-layout': HTMLNvLayoutElement;
     'nv-layout-content': HTMLNvLayoutContentElement;
     'nv-layout-footer': HTMLNvLayoutFooterElement;
     'nv-layout-header': HTMLNvLayoutHeaderElement;
+    'nv-subtitle': HTMLNvSubtitleElement;
+    'nv-title': HTMLNvTitleElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface NvBody {}
   interface NvButton {
     /**
     * If true, the button will be disabled
@@ -127,14 +152,19 @@ declare namespace LocalJSX {
   interface NvLayoutContent {}
   interface NvLayoutFooter {}
   interface NvLayoutHeader {}
+  interface NvSubtitle {}
+  interface NvTitle {}
 
   interface IntrinsicElements {
+    'nv-body': NvBody;
     'nv-button': NvButton;
     'nv-input': NvInput;
     'nv-layout': NvLayout;
     'nv-layout-content': NvLayoutContent;
     'nv-layout-footer': NvLayoutFooter;
     'nv-layout-header': NvLayoutHeader;
+    'nv-subtitle': NvSubtitle;
+    'nv-title': NvTitle;
   }
 }
 
@@ -144,12 +174,15 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'nv-body': LocalJSX.NvBody & JSXBase.HTMLAttributes<HTMLNvBodyElement>;
       'nv-button': LocalJSX.NvButton & JSXBase.HTMLAttributes<HTMLNvButtonElement>;
       'nv-input': LocalJSX.NvInput & JSXBase.HTMLAttributes<HTMLNvInputElement>;
       'nv-layout': LocalJSX.NvLayout & JSXBase.HTMLAttributes<HTMLNvLayoutElement>;
       'nv-layout-content': LocalJSX.NvLayoutContent & JSXBase.HTMLAttributes<HTMLNvLayoutContentElement>;
       'nv-layout-footer': LocalJSX.NvLayoutFooter & JSXBase.HTMLAttributes<HTMLNvLayoutFooterElement>;
       'nv-layout-header': LocalJSX.NvLayoutHeader & JSXBase.HTMLAttributes<HTMLNvLayoutHeaderElement>;
+      'nv-subtitle': LocalJSX.NvSubtitle & JSXBase.HTMLAttributes<HTMLNvSubtitleElement>;
+      'nv-title': LocalJSX.NvTitle & JSXBase.HTMLAttributes<HTMLNvTitleElement>;
     }
   }
 }
