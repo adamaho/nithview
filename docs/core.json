@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-17T18:29:14",
+  "timestamp": "2020-02-18T01:35:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -88,7 +88,7 @@
       "methods": [],
       "events": [
         {
-          "event": "buttonClick",
+          "event": "nvClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,
@@ -173,10 +173,36 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Value of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "nvInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event to handle change for input",
+          "docsTags": []
+        }
+      ],
       "styles": [],
       "slots": [],
       "dependents": [],

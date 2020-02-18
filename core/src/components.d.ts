@@ -31,6 +31,10 @@ export namespace Components {
     * Placeholder for the input
     */
     'placeholder': string;
+    /**
+    * Value of the input
+    */
+    'value': string;
   }
   interface NvLayout {}
   interface NvLayoutContent {}
@@ -99,7 +103,7 @@ declare namespace LocalJSX {
     /**
     * Event to handle button click
     */
-    'onButtonClick'?: (event: CustomEvent<any>) => void;
+    'onNvClick'?: (event: CustomEvent<any>) => void;
     /**
     * The type of the button
     */
@@ -107,9 +111,17 @@ declare namespace LocalJSX {
   }
   interface NvInput {
     /**
+    * Event to handle change for input
+    */
+    'onNvInput'?: (event: CustomEvent<any>) => void;
+    /**
     * Placeholder for the input
     */
     'placeholder'?: string;
+    /**
+    * Value of the input
+    */
+    'value'?: string;
   }
   interface NvLayout {}
   interface NvLayoutContent {}

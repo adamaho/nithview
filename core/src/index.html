@@ -16,7 +16,7 @@
       Header
     </nv-layout-header>
     <nv-layout-content>
-      <nv-input placeholder="placeholder"></nv-input>
+      <nv-input value="foooooooooo" placeholder="placeholder"></nv-input>
       <nv-button type="ghost">ghost</nv-button>
     </nv-layout-content>
     <nv-layout-footer>footer</nv-layout-footer>
@@ -52,7 +52,7 @@
   }
 </style>
 <script>
-  document.addEventListener('buttonClick', function(e) { console.log(e) });
+  document.addEventListener('nvInput', function(e) { console.log(e.detail) });
 </script>
 </script>
 </html>

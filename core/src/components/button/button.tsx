@@ -29,11 +29,11 @@ export class Button {
   @Prop() loading: boolean = false;
 
   /** Event to handle button click */
-  @Event() buttonClick: EventEmitter;
+  @Event() nvClick: EventEmitter;
 
   /** Click Handler for button */
   onClick = (e) => {
-    this.buttonClick.emit(e);
+    this.nvClick.emit(e);
   }
 
   render() {
@@ -44,7 +44,10 @@ export class Button {
           'nv-button-loading': this.loading
         }}
       >
-        <button onClick={this.onClick} disabled={this.disabled || this.loading}>
+        <button
+          onClick={this.onClick}
+          disabled={this.disabled || this.loading}
+        >
           <slot></slot>
         </button>  
       </Host>

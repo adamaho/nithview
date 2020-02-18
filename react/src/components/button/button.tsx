@@ -16,7 +16,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
   const buttonRef = React.useRef<HTMLNvButtonElement>(null);
 
-  useCustomEvent('buttonClick', buttonRef, onClick);
+  useCustomEvent('nvClick', buttonRef, onClick);
 
   return (
     <nv-button

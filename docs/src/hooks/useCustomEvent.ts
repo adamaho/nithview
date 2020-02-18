@@ -7,17 +7,19 @@ export const useCustomEvent = (
 ) => {
   return React.useEffect(() => {
     const foo = ref;
+
     function handleCustomEvent(e: Event) {
       callback(e);
     }
 
     if (foo.current !== null) {
-      foo.current.addEventListener('tabChange', handleCustomEvent);
+      console.log(foo);
+      foo.current.addEventListener(event, handleCustomEvent);
     }
 
     return () => {
       if (foo.current) {
-        foo.current.removeEventListener('tabChange', handleCustomEvent);
+        foo.current.removeEventListener(event, handleCustomEvent);
       }
     }
   });

@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event         | Description                  | Type               |
-| ------------- | ---------------------------- | ------------------ |
-| `buttonClick` | Event to handle button click | `CustomEvent<any>` |
+| Event     | Description                  | Type               |
+| --------- | ---------------------------- | ------------------ |
+| `nvClick` | Event to handle button click | `CustomEvent<any>` |
 
 
 ## Slots
