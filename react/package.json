@@ -1,6 +1,6 @@
 {
   "name": "@nithview/react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React abstraction of NithView Web Components",
   "main": "dist/nithview.cjs.js",
   "module": "dist/nithview.es.js",
