@@ -5,12 +5,16 @@ import {
 } from '../../hooks';
 
 export interface InputProps {
+  id: string;
+  name: string;
   placeholder: string;
   onChange: React.EventHandler<any>
   value?: string;
 }
 
 export const Input: React.FunctionComponent<InputProps> = ({
+  id,
+  name,
   onChange,
   placeholder,
   value
@@ -21,8 +25,10 @@ export const Input: React.FunctionComponent<InputProps> = ({
 
   return (
     <nv-input
-      ref={inputRef}
+      inputId={id}
+      name={name}
       placeholder={placeholder}
+      ref={inputRef}
       value={value}
     />
   );

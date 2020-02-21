@@ -5,12 +5,14 @@ import {
 } from '../../hooks';
 
 export interface ButtonProps {
+  htmlType: 'submit' | 'reset' | 'text';
   type: 'primary' | 'secondary' | 'tertiary' | 'ghost';
   onClick: React.EventHandler<React.MouseEvent>;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
   children,
+  htmlType,
   onClick,
   type
 }) => {
@@ -20,6 +22,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <nv-button
+      htmlType={htmlType}
       ref={buttonRef}
       type={type}
     >
