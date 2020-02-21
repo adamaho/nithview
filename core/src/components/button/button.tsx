@@ -8,6 +8,7 @@ import {
 } from '@stencil/core';
 
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost';
+export type HTMLType = 'text' | 'submit' | 'reset'
 
 /**
  * @slot - Content that is placed in the button. Must be a `string`.
@@ -18,15 +19,19 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost';
   shadow: true
 })
 export class Button {
-
-  /** The type of the button */
-  @Prop() type: ButtonType = 'primary';
-
+  
+  
   /** If true, the button will be disabled */
   @Prop() disabled: boolean = false;
 
+  /** HTML type of the button */
+  @Prop() htmlType: HTMLType;
+  
   /** If true, the button will be in a loading state */
   @Prop() loading: boolean = false;
+
+  /** The type of the button */
+  @Prop() type: ButtonType = 'primary';
 
   /** Event to handle button click */
   @Event() nvClick: EventEmitter;
@@ -45,8 +50,9 @@ export class Button {
         }}
       >
         <button
-          onClick={this.onClick}
           disabled={this.disabled || this.loading}
+          type={this.htmlType}
+          onClick={this.onClick}
         >
           <slot></slot>
         </button>  

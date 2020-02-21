@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                    | Type                                                | Default     |
-| ---------- | ---------- | ---------------------------------------------- | --------------------------------------------------- | ----------- |
-| `disabled` | `disabled` | If true, the button will be disabled           | `boolean`                                           | `false`     |
-| `loading`  | `loading`  | If true, the button will be in a loading state | `boolean`                                           | `false`     |
-| `type`     | `type`     | The type of the button                         | `"ghost" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
+| Property   | Attribute   | Description                                    | Type                                                | Default     |
+| ---------- | ----------- | ---------------------------------------------- | --------------------------------------------------- | ----------- |
+| `disabled` | `disabled`  | If true, the button will be disabled           | `boolean`                                           | `false`     |
+| `htmlType` | `html-type` | HTML type of the button                        | `"reset" \| "submit" \| "text"`                     | `undefined` |
+| `loading`  | `loading`   | If true, the button will be in a loading state | `boolean`                                           | `false`     |
+| `type`     | `type`      | The type of the button                         | `"ghost" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
 
 ## Events

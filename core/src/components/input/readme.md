@@ -9,6 +9,8 @@
 
 | Property      | Attribute     | Description               | Type     | Default     |
 | ------------- | ------------- | ------------------------- | -------- | ----------- |
+| `inputId`     | `input-id`    | id of the input           | `string` | `undefined` |
+| `name`        | `name`        | name of the input         | `string` | `undefined` |
 | `placeholder` | `placeholder` | Placeholder for the input | `string` | `undefined` |
 | `value`       | `value`       | Value of the input        | `string` | `undefined` |
 

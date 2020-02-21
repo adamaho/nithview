@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-02-18T20:53:17",
+  "timestamp": "2020-02-21T01:09:32",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
@@ -70,6 +70,31 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "htmlType",
+          "type": "\"reset\" | \"submit\" | \"text\"",
+          "mutable": false,
+          "attr": "html-type",
+          "reflectToAttr": false,
+          "docs": "HTML type of the button",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
             }
           ],
           "optional": false,
@@ -196,6 +221,38 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "inputId",
+          "type": "string",
+          "mutable": false,
+          "attr": "input-id",
+          "reflectToAttr": false,
+          "docs": "id of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "name of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "placeholder",
           "type": "string",

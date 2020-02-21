@@ -9,6 +9,7 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ButtonType,
+  HTMLType,
 } from './components/button/button';
 
 export namespace Components {
@@ -19,6 +20,10 @@ export namespace Components {
     */
     'disabled': boolean;
     /**
+    * HTML type of the button
+    */
+    'htmlType': HTMLType;
+    /**
     * If true, the button will be in a loading state
     */
     'loading': boolean;
@@ -28,6 +33,14 @@ export namespace Components {
     'type': ButtonType;
   }
   interface NvInput {
+    /**
+    * id of the input
+    */
+    'inputId': string;
+    /**
+    * name of the input
+    */
+    'name': string;
     /**
     * Placeholder for the input
     */
@@ -122,6 +135,10 @@ declare namespace LocalJSX {
     */
     'disabled'?: boolean;
     /**
+    * HTML type of the button
+    */
+    'htmlType'?: HTMLType;
+    /**
     * If true, the button will be in a loading state
     */
     'loading'?: boolean;
@@ -135,6 +152,14 @@ declare namespace LocalJSX {
     'type'?: ButtonType;
   }
   interface NvInput {
+    /**
+    * id of the input
+    */
+    'inputId'?: string;
+    /**
+    * name of the input
+    */
+    'name'?: string;
     /**
     * Event to handle change for input
     */

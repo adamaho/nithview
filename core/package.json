@@ -1,6 +1,6 @@
 {
   "name": "@nithview/core",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Skeumorphic Web Component Library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

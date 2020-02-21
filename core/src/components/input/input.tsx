@@ -17,11 +17,17 @@ export class Input {
 
   private nativeInput?: HTMLInputElement;
 
-  /** Value of the input */
-  @Prop() value: string
+  /** id of the input */
+  @Prop() inputId: string
+
+  /** name of the input */
+  @Prop() name: string
 
   /** Placeholder for the input */
   @Prop() placeholder: string
+
+  /** Value of the input */
+  @Prop() value: string
 
   /** Event to handle change for input */
   @Event() nvInput: EventEmitter;
@@ -42,9 +48,11 @@ export class Input {
     return (
       <Host>
         <input
-          ref={input => this.nativeInput = input}
-          placeholder={this.placeholder}
+          id={this.inputId}
+          name={this.name}
           onInput={this.onInput}
+          placeholder={this.placeholder}
+          ref={input => this.nativeInput = input}
           value={this.value}
         />
       </Host>
