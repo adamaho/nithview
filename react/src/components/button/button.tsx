@@ -5,9 +5,9 @@ import {
 } from '../../hooks';
 
 export interface ButtonProps {
-  htmlType: 'submit' | 'reset' | 'text';
-  type: 'primary' | 'secondary' | 'tertiary' | 'ghost';
-  onClick: React.EventHandler<React.MouseEvent>;
+  htmlType?: 'submit' | 'reset' | 'text';
+  type?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
+  onClick?: React.EventHandler<React.MouseEvent>;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -22,7 +22,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <nv-button
-      htmlType={htmlType}
+      html-type={htmlType}
       ref={buttonRef}
       type={type}
     >
@@ -30,3 +30,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     </nv-button>
   )
 };
+
+Button.defaultProps = {
+  type: "primary"
+}

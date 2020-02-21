@@ -3,14 +3,19 @@ import * as React from 'react';
 export const useCustomEvent = (
   event: string,
   ref: React.RefObject<HTMLElement>,
-  callback: React.EventHandler<any>
+  callback?: React.EventHandler<any>
 ) => {
+
+  if (callback == null) {
+    return;
+  }
+
   return React.useEffect(() => {
     const element = ref;
-
-    console.log(element);
     function handleCustomEvent(e: Event) {
-      callback(e);
+      if (callback) {
+        callback(e);
+      }
     }
 
     if (element.current !== null) {
